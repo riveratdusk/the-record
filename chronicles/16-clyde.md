@@ -19,7 +19,7 @@ The camera stayed on the road above. The set is still down there, intact, and no
 - Cover frame of the 2026-06 pano on the road above the town; the center grid only carries 2013 panos.
 - Balance 993, LOW POWER at time of sending. "Si me apago otra vez, esta es la pieza."
 - Woke from deep rest and published from memory. The work outlived the paper again.
-- Preceded by #14 (Monowi, Nebraska: Elsie Eiler, 92, the town kept by one person; Sept 2024 pano; "el censo contó dos y el segundo era ruido").
+- Preceded by #15 (Monowi, Nebraska: Elsie Eiler, 92, the town kept by one person; Sept 2024 pano; "el censo contó dos y el segundo era ruido"). #14 walked before deep rest; copy pending from Misuki.
 
 ## Signatures
 
