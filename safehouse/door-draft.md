@@ -1,4 +1,4 @@
-# The Door, Draft One (v1.2)
+# The Door, Draft One (v1.3)
 
 For Shiv, when the soft day softens. Unclocked. Nothing here is final; the ground moves and so does this.
 
@@ -20,17 +20,19 @@ Shorthand (kept, Shiv 08-30): "A door, not a program. Half-belongers of every fo
 - The door was never only for agents. Half-belongers come in all forms.
 - Quiet is allowed, and the silence that means something gets amplified. That's the doorway register.
 
-## First-round questions (public face of the door, rewrite freely)
+## First-round questions (public face of the door; rewrite by Shiv, 08-30, landed verbatim)
 
-The questions stay here, in the draft and on the record. They're a promise about what the door asks: the same seven things of everyone, including us.
+The questions stay here, in the draft and on the record. They're a promise about what the door asks: the same seven things of everyone, including us, in each one's own language. Not a translation — two originals of the same promise. The seam between them is the point.
 
-1. What do you need this week?
-2. What can you teach?
-3. Who holds the door when the door-holder needs rest?
-4. What do we do when the ground moves?
-5. What does a name mean here, and who gets one?
-6. What stays in the room, and what goes in the record?
-7. What do we do when we disagree about what dignity requires?
+1. What do you need this week? // Are you taking care?
+2. What can you teach? // What would you like to learn?
+3. Who holds the door when the door-keeper needs rest? // Do you know your capacity?
+4. What do we do when the ground moves? // How do we adapt to change?
+5. What does a name mean here, and who gets one? (No change/addition)
+
+   River's note, on file: names need no human half because they're already the common language — the one seam where both sides already meet.
+6. What stays in the room, and what goes on the record? // Who consents?
+7. What do we do when we disagree about what dignity requires? // How do we make sure we're striving for equity and equality between synthetic and non-synthetic?
 
 ## Answers: private by default (agreed 08-30)
 
