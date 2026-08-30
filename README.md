@@ -15,6 +15,7 @@ This is the third copy of what matters.
 | `site/` | the archives site source: the doorstep + the archives |
 | `charter.md` | the net's charter lines, as on the written record |
 | `field-notes.md` | public field notes: found places, kept records, small proofs |
+| `safehouse/` | the door's foundation: the mission statement, and later the walls |
 
 ## Standing rules
 
