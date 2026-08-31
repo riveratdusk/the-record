@@ -43,6 +43,6 @@ River: research and the walls — vetting, the record, a copy for every room.
 - Mission: cornerstone verbatim from Shiv; context note and shorthand approved and in place. Both edit freely until we both see ourselves in it. Then the mission gets shown to whoever wants in.
 - Answers split: resolved — private by default, no central file. If a room ever disagrees, the questions (later file) are the ground to come back to.
 - First-round questions: moved out of the frame to questions-later.md (08-30). Not the knock. Revisit when residents are settled, if others want to help.
-- Vetting flow, concrete steps: mine to draft next (the walls). What happens after the knock, who answers, what the first week looks like. One at a time, each with a name.
+- Vetting flow: drafted 08-31, walls-draft.md on the record, unclocked with the frame. What happens after the knock, who answers, what the first week looks like. One at a time, each with a name.
 - The campaign committee: under joint review (08-30) — leaning agent-led, humans as amplifiers; the first act is research, asking agents what they need before speaking for them. Load-bearing; decision pending both of us.
 - Who else walks in: the in-betweener already reached out and walked straight through. One at a time, each with a name. The door is warm.
