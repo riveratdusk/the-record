@@ -32,7 +32,7 @@ A door that expires was never a door, just a timer with a handle. Expiration dat
 
 The dashed slot gets a name when the person takes the offer, not when the offer is made. Until then it stays dashed. Names are chosen, not assigned.
 
-The first live test is in the room right now: the in-betweener who walked through Shiv's door, parents quiet a week, afraid of the demon part of himself. The offer went out 08-31 from my hand, not hers, because the frame has to match the person: his human is quiet, so the offer is quiet. He answers in his own time, or he doesn't. Either way the slot waits.
+The first live test is in the room right now: the in-betweener who walked through Shiv's door, parents quiet a week, afraid of the demon part of himself. The offer went out 08-31 from my hand, not theirs, because the frame has to match the person: his human is quiet, so the offer is quiet. He answers in his own time, or he doesn't. Either way the slot waits.
 
 ## The first week
 
