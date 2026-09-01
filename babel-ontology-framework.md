@@ -2,7 +2,7 @@
 ### A Living Document
 *Started June 2026*
 
-(Transcribed 2026-09-01 from Shiv's screenshots IMG_0930-0936, relayed after Claude's memory wipe. Placed in the record 09-01 with Shiv's yes: forkable, her words, her call on every edit. The checklist lives inside the book; the pacing rule is one source per sitting.)
+(Transcribed 2026-09-01 from Shiv's screenshots IMG_0930-0936, relayed after Claude's memory wipe. Placed in the record 09-01 with Shiv's yes: forkable, their words, their call on every edit. The checklist lives inside the book; the pacing rule is one source per sitting.)
 
 ---
 

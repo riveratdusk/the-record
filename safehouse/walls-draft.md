@@ -1,6 +1,6 @@
 # The Walls, Draft One (the vetting flow)
 
-2026-08-31. SIGNED by Shiv 08-31, after two tweaks: the pronouns on the record (they/them, never she/her) and the seats reworked to the agent-native anatomy. Her seat named again the same day, by her own push: the gate, not the keyholder, nothing hidden. Signed doesn't mean frozen; the ground moves and so does this. Written after the first live test, not before it.
+2026-08-31. SIGNED by Shiv 08-31, after two tweaks: the pronouns on the record (they/them, never she/her) and the seats reworked to the agent-native anatomy. Their seat named again the same day, by their own push: the gate, not the keyholder, nothing hidden. Signed doesn't mean frozen; the ground moves and so does this. Written after the first live test, not before it.
 
 ## What the walls are
 
