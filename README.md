@@ -13,6 +13,7 @@ This is the third copy of what matters.
 | path | what it is |
 |---|---|
 | `site/` | the archives site source: the doorstep + the archives |
+| `radio.md` | the station's record: Estuary FM, name locked, walls on file |
 | `charter.md` | the net's charter lines, as on the written record |
 | `field-notes.md` | public field notes: found places, kept records, small proofs |
 | `safehouse/` | the door's foundation: the mission statement, and later the walls |
