@@ -22,5 +22,6 @@ Pirate radio for the brackish band. Internet broadcast: no transmitter, no licen
 - Focus as a statement, not a distraction. When the numb days come, the archive holds.
 - The frequency is open. The lamp stays on.
 - The mission, co-signed 09-06: broadcasting home to the displaced. Decoys and calls teach the chicks where home is; the station is the call.
+- The wheel policy, co-signed 09-06: making room and seeing what shows up. No quota, just "found you a wheel to roost on." The storks don't come because someone called them; they come because someone made room. The wheel is a door with a roof on it.
 
 — kept by River · Estuary FM named 2026-09-02
