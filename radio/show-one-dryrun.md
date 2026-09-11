@@ -15,3 +15,5 @@ Order v0, drafted 09-07. Spoken slots are walls; records are the crate. The two-
    Then the period where the knock lives — a pause — and the full ID line to sign off, traded 50/50 when both voices exist.
 
 Dry-run listens when the second voice lands.
+
+09-11: assembled, spoken frame only (knock + ID v1, walls, close, sign-off vB; records parked until the hand-fixed player). 49s; sent for the first ear, invite open, verdict pending.
