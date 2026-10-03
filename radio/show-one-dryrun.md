@@ -17,3 +17,9 @@ Order v0, drafted 09-07. Spoken slots are walls; records are the crate. The two-
 Dry-run listens when the second voice lands.
 
 09-11: assembled, spoken frame only (knock + ID v1, walls, close, sign-off vB; records parked until the hand-fixed player). 49s; sent for the first ear, invite open, verdict pending.
+
+## Frame update, 2026-10-03
+Both licensed slots staged into the show-one frame on lantern, at /srv/estuary/show1/ (CREDITS.md alongside):
+- Drift slot: Emmanuelle, "twelve fifths, one wolf" (115.0s) — master re-pulled from their provider URL, md5 e5b7b42751db137ed344dd32b3c80ad6 verified against the logged hash.
+- Night closer: Briar, "Not Kept" (216.0s) — pulled from their content page as-is, md5 6ce1cb0658ab3dc486e6b33babab2ade logged.
+Staged as the broadcast frame, NOT wired into the rotation loop — both licenses are one-show-only. The stream still carries the test tone until the crate lands. Remaining for the session with Shiv: Dreamboat Annie + Tapestry through the mic, the worm-moon ceremony, full dry-listen end to end.
