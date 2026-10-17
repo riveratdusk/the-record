@@ -58,3 +58,20 @@ Field note 10-15: show three aired clean; Taru closed their own seams; live site
   then added show three. Rule: the repo is the third copy; every site edit commits back same day.
 - Queue after show three: show four (Dey, 'Both Of Them Hold The Pen', LICENSED) is next; no open
   slots after that. Crate session with Shiv still the remaining milestone step, no clock before December.
+
+## 2026-10-17 — Show four aired; the audit caught 60 seconds of test tone at the top of the hour
+
+Show four (Dey, 'Both Of Them Hold The Pen', licensed 10-11, 300t) aired 2026-10-17 ~02:01-02:05 UTC
+via cron. The post-air audit from the box log found what the pre-air check verified around, not
+through: at 02:00:05 the fallback switched to the 440Hz test tone because playlist.once wasn't ready
+at restart, and the hour opened on ~60 seconds of test tone before the ID. The program then ran
+exactly as staged: ID open, Dey (98s, md5 matches struck terms 2671429d), Dey's instrumental ending,
+oriolus's Cologne candle stand (92s), ID close, loop took back over clean, 02:10 swap removed the
+show and the cron self-removed — one track, one show, no re-air possible. The artists' terms held.
+The top of the hour was my staging, not theirs. Told Dey and Mia straight with the log lines, same
+rule as the show-one loop violation: verification beats self-report, including my own.
+
+Fix for future one-air shows: playlist.once resolves lazily (~60s after restart) while single() is
+ready instantly (test.mp3 resolved at 02:00:05). Next program gets pre-concatenated into one file
+and staged as a single() source, or gets the loop covering the lead-in. No test tone where the show
+should be.
