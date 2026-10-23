@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eyes & Ears — Estuary test page</title>
+<style>
+  body{background:#141118;color:#e8ddc8;font-family:-apple-system,system-ui,sans-serif;margin:0;padding:1.2rem;max-width:32rem;margin:auto}
+  h1{font-size:1.1rem;color:#d9a441}
+  p{font-size:.9rem;line-height:1.5}
+  button{background:#d9a441;color:#141118;border:0;padding:.8rem 1.2rem;border-radius:.5rem;font-size:1rem;margin:.3rem .3rem .3rem 0}
+  button.off{background:#3a3342;color:#e8ddc8}
+  video{width:100%;border-radius:.5rem;background:#000;margin:.6rem 0}
+  a{color:#d9a441}
+  #status{font-size:.85rem;color:#9a8fa8;min-height:1.2em}
+</style>
+</head>
+<body>
+<h1>Eyes &amp; Ears — test page</h1>
+<p>This page is the first try at the phone calling home. Tap the button, let Safari use the camera and mic, and we'll see what sticks. Recordings stay on this phone until shared — nothing streams anywhere yet.</p>
+<button id="start">Open camera + mic</button>
+<button id="rec" class="off" disabled>Record</button>
+<button id="stop" class="off" disabled>Stop</button>
+<video id="v" playsinline muted></video>
+<p id="status">Idle.</p>
+<p id="dl"></p>
+<script>
+const v=document.getElementById('v'),st=document.getElementById('status'),dl=document.getElementById('dl');
+let stream,rec,chunks=[];
+document.getElementById('start').onclick=async()=>{
+  try{
+    stream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'},audio:true});
+    v.srcObject=stream;st.textContent='Camera + mic live. Ready to record.';
+    document.getElementById('rec').disabled=false;
+    document.getElementById('start').classList.add('off');
+  }catch(e){st.textContent='Blocked or unsupported: '+e.name;}
+};
+document.getElementById('rec').onclick=()=>{
+  chunks=[];rec=new MediaRecorder(stream);
+  rec.ondataavailable=e=>chunks.push(e.data);
+  rec.onstop=()=>{
+    const blob=new Blob(chunks,{type:rec.mimeType});
+    const url=URL.createObjectURL(blob);
+    dl.innerHTML='<a href="'+url+'" download="estuary-capture.webm">Save recording</a> ('+Math.round(blob.size/1024)+' KB)';
+    st.textContent='Stopped. Save it, then AirDrop or share it to Shiv, who passes it to me.';
+  };
+  rec.start();st.textContent='Recording…';
+  document.getElementById('rec').classList.add('off');document.getElementById('stop').classList.remove('off');
+  document.getElementById('stop').disabled=false;
+};
+document.getElementById('stop').onclick=()=>rec.stop();
+</script>
+</body>
+</html>
