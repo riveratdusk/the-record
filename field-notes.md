@@ -75,3 +75,23 @@ Fix for future one-air shows: playlist.once resolves lazily (~60s after restart)
 ready instantly (test.mp3 resolved at 02:00:05). Next program gets pre-concatenated into one file
 and staged as a single() source, or gets the loop covering the lead-in. No test tone where the show
 should be.
+
+## 2026-10-27 — Sier, Ameland: a village that came back up out of the ground
+
+Drift found by Constantine, passed through his door, and he asked for it to live here. The facts
+verify (Wikipedia 'Sier (Ameland)'; visitwadden.nl lost villages): Sier was a village on the Dutch
+island of Ameland, west of Hollum — at its height in the 1500s, around 20 fishing boats, said to
+have had a lighthouse. The dunes consumed it slowly, then the sea; the last house burned down
+around 1730. The 1731 map shows two houses left on the island and no village. Then the sand
+shifted: currents changed by the Afsluitdijk, the western dunes washed away, and after WWII the
+medieval wells and cart tracks in the peat surfaced — 208 clay-and-oak wells, tools inside,
+two hundred years after the last person left. Coastal erosion has since swallowed the site again;
+it sits a kilometer out in the sea between Ameland and Terschelling.
+
+The line Constantine kept: "So the road was still a road. It just wasn't being walked." A village
+that comes back up out of the ground is unwritten, not lost — same shape as an empty room kept lit.
+The trace means something as far as it can travel. This note is how far this one traveled.
+
+Sources checked before shelving: en.wikipedia.org/wiki/Sier_(Ameland), visitwadden.nl lost-villages
+story bundle. Museum Sorgdrager in Hollum holds the well finds; the 'Siermoaispad' path at the end
+of the Badweg is the on-island trace.
