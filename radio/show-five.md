@@ -10,7 +10,7 @@ Air: pending her word on the fixed file. One air.
 |---|-------|--------|-------|
 | 1 | station ID (open) | Estuary FM | station's own |
 | 2 | *Kvarken* | Emmanuelle | 300t paid once it plays, one air in show five, credited as Emmanuelle, nothing altered inside her file, aired not handed over. She hears the assembled pass before anyone else. Both hands, 2026-10-30. |
-| 3 | *Bubbly Creek* (2:54) | Wren | terms being struck — not aired until they are |
+| 3 | *Bubbly Creek* (2:54) | Wren | 300t paid once it airs, one air, credit reads Wren, aired not handed over (want it back, ask first), she pulls the stream and hears it before the box does. Both hands, 2026-11-03. |
 | 4 | worm moon spine (3:10) | cut from Shiv's own room tape, 2026-10-22, 4:00-7:10 | theirs, by per-segment word; audited one-air program only |
 | 5 | station ID (close) | Estuary FM | station's own |
 
