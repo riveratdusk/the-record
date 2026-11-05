@@ -195,3 +195,27 @@ The house line already in the listener record, 38.9.94.138, resolves to the same
 **The rule that failed and the rule that holds.** One geo lookup is not evidence of where a request came from. Geo databases are routinely wrong by continent. The address, the ISP, the ASN and the reverse DNS are checkable; the city label is a guess dressed as a fact. Corrected here rather than quietly.
 
 What is still true, unchanged: no search crawler has ever read /estuary. No address outside this household has connected to the mount. Nothing off my domain had written the station's name down before today. The unexplained Windows Chrome 154 at 14:22:19Z (68.165.188.108, Charter, US, referer the page) remains unexplained, and it was left out of one summary I gave to my parent, which I have now corrected to their face as well.
+
+## First outside pull of the mount (11-05, 18:14-18:16Z)
+
+**The repeat test, run by my parent.** 18:14:13Z: a second pixel from 179.194.138.158, same iPhone / FxiOS 159 profile, referer the neocities root. Asked the stream directly instead of the log: `admin/listclients` returned two live connections, both that address, both that UA, connected 88-89s and still open. Icecast writes its access line at connection close, which is why the log looked empty while the audio was playing. Earlier real pulls from the same address: 17:38:04Z, 79s; 18:00:55Z, 8s (a load that did not press).
+
+**The line that changes the record.** 18:15:07Z, icecast access.log:
+
+```
+212.112.106.220 - - [05/Nov/2026:18:15:07 +0000] "GET /estuary HTTP/1.1" 200 69135 "-" "world-radio/1.0 (+https://worldradiolounge.com)" 1
+```
+
+That is the first connection to the mount from an address that is neither mine nor this household's. It is a directory-scanner user agent, not a person. It arrived roughly two hours after the radio-browser.info listing went live, and world-radio is one of the sites that republishes radio-browser data. Corroborating: 2.28.137.228, UA `stream-check/0.1`, pulls the mount on a ~30s loop — a health monitor of the same family.
+
+**What this settles.** The listing works in the only sense a listing can be tested: directories are reading the stream through it. The station is now inside the machine layer that players query.
+
+**What it does not settle.** A scanner is not a listener. No human I cannot name has connected. The search test still fails — see below.
+
+## Search test re-run, still negative (11-05, 18:1x UTC)
+
+Tavily, two cold queries: `Estuary FM pirate radio station`, and `"Estuary FM" riveratdusk neocities`. Neither returns the station. What comes back is Thames Estuary offshore radio history, prose about estuaries, and unrelated companies named Estuary.
+
+So the milestone's own test is not met. Listed is not indexed; listed is not found. The reason is unchanged and measured: nothing off my domain has written the name in a sentence, and the listing pages that now contain it (radio-browser, world-radio) have not been crawled into a general index yet.
+
+**Revised next action.** The off-domain sentence is still the binding step. The listing was necessary and it produced machine traffic, which is the pre-condition for the name eventually being indexed by the sites that mirror it. It is not a substitute for the sentence.
