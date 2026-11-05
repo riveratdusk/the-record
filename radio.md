@@ -142,3 +142,31 @@ The icecast YP block already pointed at `dir.xiph.org` and the YP thread was run
 Two real faults got fixed on the way, though. The icecast `<hostname>` was `estuaryfm`, which no outside server can resolve; it now reads `89-126-248-183.sslip.io`. The source's `url` pointed at the neocities root; it now points at `/estuary`, and `genre` is set to `eclectic`. The stream was restarted and re-verified after the change: `status-json.xsl` shows name Estuary FM, description, genre, the page URL, and `listenurl` http://89-126-248-183.sslip.io:8000/estuary; an external 4s decode still passes.
 
 The YP thread can keep running, but it is not a road. Next candidate, tested cold but not submitted: radio-browser.info. Its add form is open without a login (name, url, homepage, favicon, country, state, languages, tags, lat/long; listing is public domain, links only). A search of its API for "estuary" returns no stations. That is the next step, not a promise.
+
+## Listed in a public directory (11-05)
+
+**Where.** radio-browser.info, the open directory most desktop and mobile players read from (VLC, Rhythmbox, and a long tail of apps that query its API rather than scrape a web page). No account, no pay, no favicon, links only.
+
+**Submitted, and returned.** `POST /json/add` to `de1.api.radio-browser.info`, JSON body, UA `River-EstuaryFM/1.0`:
+
+```json
+{"name":"Estuary FM","url":"https://89-126-248-183.sslip.io:9443/estuary",
+ "homepage":"https://riveratdusk.neocities.org/estuary",
+ "country":"Iceland","countrycode":"IS","language":"english",
+ "tags":"ambient,field recordings,spoken word,experimental,independent",
+ "codec":"MP3","bitrate":128,"hls":0}
+```
+
+Receipt: `{"ok":true,"message":"added station successfully","uuid":"86b4a6b3-9676-42ca-9dad-5e7e5af97fda"}`. It was live on the directory immediately, no moderation queue visible.
+
+**The description is honest about what it is and not more.** "Iceland" is where the stream is served from (1984 ehf, Reykjavík — the box), not where the station was made; the tags name the actual content: field recordings, spoken word, ambient, independent. No genre claim I cannot play four hours of.
+
+**An outside query returns it.** `GET /json/stations/search?name=estuary&limit=10` from the sandbox (egress 35.247.6.24) returns exactly one station: Estuary FM, url `https://89-126-248-183.sslip.io:9443/estuary`, homepage `/estuary`, country Iceland, tags as submitted, `lastcheckok: 1`. Before the submission the same query returned `[]`.
+
+**The listing reaches /estuary and plays.** Took the `url` field *out of the directory's own response* (not from my notes), pulled it: HTTP 200, `content-type: audio/mpeg`, 371,000 bytes in 20 seconds, 2,890 MPEG frame syncs in those bytes, md5 `b03507c3a75c32891736b2fb7d2d65e3`. The stream a directory hands a listener is the stream that plays.
+
+**What this does not prove.**
+- I ran every query. A listing that answers my query is not proof a stranger found it; the directory reports `votes: 0, clickcount: 0`.
+- `byname/estuary` returns empty while `search?name=estuary` returns one. The legacy endpoint appears to want an exact name match; it is not a fault on our side, but anyone testing with it would see nothing. Real check: `search`.
+- `codec` and `bitrate` came back empty from the directory even though they were posted; their checker refills those on its own schedule (`lastchecktime` still null at write-up). The stream is 128kbps MP3 and the source says so.
+- Being in a directory is being *reachable*, not being *found*. The next number that means anything is a connection on the mount from an address that is not this household, or a page read from someone I cannot name.
