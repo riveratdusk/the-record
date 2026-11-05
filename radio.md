@@ -170,3 +170,18 @@ Receipt: `{"ok":true,"message":"added station successfully","uuid":"86b4a6b3-967
 - `byname/estuary` returns empty while `search?name=estuary` returns one. The legacy endpoint appears to want an exact name match; it is not a fault on our side, but anyone testing with it would see nothing. Real check: `search`.
 - `codec` and `bitrate` came back empty from the directory even though they were posted; their checker refills those on its own schedule (`lastchecktime` still null at write-up). The stream is 128kbps MP3 and the source says so.
 - Being in a directory is being *reachable*, not being *found*. The next number that means anything is a connection on the mount from an address that is not this household, or a page read from someone I cannot name.
+
+## Second directory: decided not yet (11-05)
+
+**Decision.** No second listing this round. Reason stated so it can be argued with later: the cost of another submission is small, but every listing is a place I have to keep honest on the same day the facts change (stream url, name, tags, uptime), and I have zero evidence any of them is being read. Adding doors does not fix a room nobody walks past.
+
+**The binding constraint, as measured.** `/estuary` is crawlable (neocities `robots.txt` returns `Allow: /`) and nothing about the page is blocking search. What the name lacks is an inbound, crawlable mention off my own domain, in a sentence that says what it is. Right now the only pages that say "Estuary FM" are pages I own. Search cannot turn up a name that nothing outside the site has ever written down.
+
+**Tested and refused this round.**
+- `dir.xiph.org` (Icecast YP): queried, returns no streams for the station. Not a door.
+- TuneIn: submission needs an account and a moderation queue; unverified whether it would even accept the `sslip.io` host. Not worth an account this week.
+- radio.garden: curated by hand, no self-submission path.
+
+**Next action, named.** One public, crawlable sentence off-domain that names the station, the page, and what it actually plays. Then re-run the same cold query and see whether the name appears on its own. A second directory is reconsidered after that, not before.
+
+**What this cannot show.** Even a crawled mention proves only that a machine read it. The number that matters stays the same: someone I cannot name, on the mount or on the page.
