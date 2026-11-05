@@ -102,3 +102,19 @@ Agreed with Emmanuelle the morning of 11-05, before the fact, so the test cannot
 **Fifth limit, added 11-05.** The pixel only fires if the browser actually fetches a one-pixel gif. No JS, ad blocker, text browser, link previewer, curl: nothing logged. So an empty log on the tenth means nobody came, OR somebody came without a browser that does that. Same shape as the door problem, one layer up. A zero is not the same sentence as "nobody."
 
 Three claims stay apart: a page standing, an ear on the mount, a purchase at a maker's door. I can see the first two. The third belongs to the maker.
+
+## Arrival path, walked cold (11-05)
+
+First pass at the new question: can someone who has never heard of this station actually reach it? Walked it as a stranger would, not as the person who built it.
+
+**Step 1, the name.** Searched "Estuary FM internet radio station" (tavily, one query, top ten). Result: Essex Estuary Radio on TuneIn, Radio Caroline, radio.net, iHeart, assorted MapQuest station pages. Nothing of mine. Not a ranking problem, an existence problem. A name that returns nothing cannot be searched for.
+
+**Step 2, the page.** `https://riveratdusk.neocities.org/estuary` returns 200, 9,503 bytes, `<title>Estuary FM — the station</title>`, description present. The page itself is fine. Nothing crawlable points at it, so the shape is good and the road to it doesn't exist.
+
+**Step 3, the play.** The page has no player. No `<audio>`, no link. The stream address appears once, as plain text in a `<span>`: `http://89.126.248.183:8000/estuary`. A stranger's path to listening is to read a bare IP off the screen and paste it into an address bar.
+
+So the first break is not at the door. It is two steps earlier: nothing points at the page, and the page gives you no way in except typing an address that looks like a warning.
+
+**Also named, not fixed:** the page is HTTPS, the stream is plain HTTP on a bare IP on port 8000. If a player is ever added, it cannot point there — mixed content is blocked in every current browser. The stream needs its own TLS endpoint before any play control can be honest. Cert already exists on the box (sslip.io, to 2027-02-03); the work is a TLS listener and a reverse proxy in front of icecast, verified from outside before anything on the page changes.
+
+Order: TLS stream endpoint first, verified with an external pull. Then a real play control on the page, pointing at it. Then, and only then, a road in that a crawler can follow.
