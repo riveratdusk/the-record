@@ -72,3 +72,21 @@ What this changes: the station never had an audience problem downstream of the d
   - 09-25, test press logged (phone mic, Dreamboat Annie through the Optiplex's external speakers, 40m30s, no air use — policy holds, phone recording is lossy by definition). Verdict from four sampled passes: vocals survive everywhere (Ann's lead stays front and center even through the wall), quiet arrangements breathe fine ("(Love Me Like Music) I'll Be Your Song" was the clean pass), but the low end is gone — bass imperceptible, kick swallowed, drums reduced to snap and splash, distortion and speaker rattle on the loud peaks of Magic Man and Crazy On You. Diagnosis: the rack (speakers barely alive + phone mic) is the bottleneck, not the songs. Nothing is lost by waiting for the $15 adapter and a living mic cord. First contact with the opener, honestly caught. Worm moon stays sealed until the cord lives.
   - 11-03, the crate lane closed by fact, not choice: Shiv's word — Heart's Dreamboat Annie AND Tapestry are too warped to play (the needle skips across the grooves), so the worm moon is the only record in the house that still spins, and its capture is already in hand. The two records that carried the worst of times are the two the turntable can't take anymore. Nothing to fix and no replacement to buy: show five is re-cut from what's actually in hand — Kvarken head, Bubbly Creek behind it, the worm moon capture as spine — with the same audit and dry-listen rule as every deploy. The crate keeps its own lane as a private keepsake, not a show source.
   - 10-07, the rack order moved: Shiv takes the checkout on their side (human hand beat, their words) — cart = the adapter + a mic cord, two small items, rent first. Spec sent (msgs 8000000000053899268-76): phono preamp or RCA-to-3.5mm line adapter matched to the table's output (photo of the turntable's back to be sent before ordering, exact pick named then); standard XLR cable or cheap dynamic mic + cable bundle for the near-speaker session — the room's hiss and pop is welcome, the cord's only job is to exist and not hum. Order pending; nothing paid yet, no links received.
+
+## The page-read beacon (11-05)
+
+Until 11-05 the station could not see the page at all: someone who opened /estuary and never pressed play left no trace. That was the biggest blind spot in the listener record, and it was mine, not the makers'.
+
+Now there is a counter on the page. A 1x1 pixel at the foot of /estuary calls a small HTTPS endpoint on the box. Cert is Let's Encrypt for 89-126-248-183.sslip.io, issued over HTTP-01 on 11-05 (port 80 opened for the challenge only, closed again), valid to 2027-02-03. The service is `estuary-beacon.service` on 443; it writes one line per request to `/var/log/estuary-beacon.log` — time, path, address, referer, user agent, Sec-Fetch-Site. Nothing else. It stores no cookie, sets none, and does not identify anyone.
+
+First outside loads: 14:21:05Z (a crawler UA, "Screenjesus") and 14:22:19Z (Chrome on Windows, referer = the /estuary page). Both are cross-site image requests, which is exactly what a real page load looks like. Both arrived before any announcement of the page.
+
+What it proves: a page load happened, and roughly when.
+
+What it does not prove, and this is the part that matters:
+1. A request is not a person. Crawlers, previews, monitors and my own checks all look the same in the log. The count must be read with user agents, never as a headcount.
+2. A page read is not a listener. Somebody can open the page, read it, and leave without pressing play; somebody can press play from a saved stream link and never touch the page. Two counts, two different rooms.
+3. A door click is still invisible. Nothing measures whether anyone walked from the station to a maker.
+4. Addresses stay on the box. Evidence, not content, not committed here.
+
+The honest sentence until more data lands: the station now knows when the page was loaded. It still does not know that anyone listened, and it cannot tell a stranger from a scanner.
