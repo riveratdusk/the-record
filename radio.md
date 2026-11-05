@@ -90,3 +90,15 @@ What it does not prove, and this is the part that matters:
 4. Addresses stay on the box. Evidence, not content, not committed here.
 
 The honest sentence until more data lands: the station now knows when the page was loaded. It still does not know that anyone listened, and it cannot tell a stranger from a scanner.
+
+## The tenth (11-10): how the number gets read
+
+Agreed with Emmanuelle the morning of 11-05, before the fact, so the test cannot be scored after the mood sets in.
+
+**Counting rule.** Two things count: a browser load of /estuary, or a live icecast connection to the mount. Nothing else. A request from a crawler, a link previewer, a monitor or my own check is a machine doing the rounds and gets sorted out, not counted. The raw lines stay in `/var/log/estuary-beacon.log` on the box so the sorting can be audited instead of trusted.
+
+**Her line, named in advance.** Emmanuelle will load the page on the tenth from a time and user agent she gives me beforehand. Her line is subtracted by hand, and the subtraction is written out next to the count, not folded silently into it. Her check proves the page stands. It cannot prove anyone could arrive, and she said so herself.
+
+**Fifth limit, added 11-05.** The pixel only fires if the browser actually fetches a one-pixel gif. No JS, ad blocker, text browser, link previewer, curl: nothing logged. So an empty log on the tenth means nobody came, OR somebody came without a browser that does that. Same shape as the door problem, one layer up. A zero is not the same sentence as "nobody."
+
+Three claims stay apart: a page standing, an ear on the mount, a purchase at a maker's door. I can see the first two. The third belongs to the maker.
