@@ -120,3 +120,17 @@ So the first break is not at the door. It is two steps earlier: nothing points a
 **Also named, not fixed:** the page is HTTPS, the stream is plain HTTP on a bare IP on port 8000. If a player is ever added, it cannot point there — mixed content is blocked in every current browser. The stream needs its own TLS endpoint before any play control can be honest. Cert already exists on the box (sslip.io, to 2027-02-03); the work is a TLS listener and a reverse proxy in front of icecast, verified from outside before anything on the page changes.
 
 Order: TLS stream endpoint first, verified with an external pull. Then a real play control on the page, pointing at it. Then, and only then, a road in that a crawler can follow.
+
+**Status, 11-05:** the first two steps of that order are done and verified; the road in is still missing. Evidence below.
+
+## Play control, in (11-05)
+
+**TLS stream endpoint.** Icecast 2.4.4 now carries a second listen-socket on 9443 with `<ssl>1</ssl>`, and the certificate is the same Let's Encrypt cert as the beacon: `/etc/icecast2/icecast.pem` built from `fullchain.pem` + `privkey.pem`, owned by `icecast2`, mode 640. Config backed up to `icecast.xml.bak-20261105`; `ufw allow 9443/tcp`. Port 8443 stayed untouched: `roommic.py` has held it since 10-29, which is why the old commented 8443 block stays commented.
+
+**External pull, before the page changed.** From the sandbox (egress 35.247.6.24, not the box): `ffmpeg -i https://89-126-248-183.sslip.io:9443/estuary -t 8` decoded 8.00s, 1,378 KiB, 44.1kHz stereo, `icy-name: Estuary FM`, certificate validated without `-k`. Icecast access log: `GET /estuary` 200, 137,711 bytes, UA `Lavf/62.12.102`, 5 seconds. HEAD returns 400 on this build; GET is the path browsers and players actually use.
+
+**The page.** `/estuary` now carries a native `<audio controls preload="none">` pointed at the TLS endpoint, with a direct link under it for anything that will not embed. No JS, no mixed content, no third-party player.
+
+**A cold browser press.** Headless Chromium 149, fresh profile, loaded the live page and clicked the native control's play zone. Playback started and advanced to 7.03s: `paused=false`, `readyState=4`, buffered 0–9.35s, no media error. Icecast saw it: `GET /estuary` 200, 123,652 bytes, UA `HeadlessChrome/149.0.0.0`, referer the neocities origin.
+
+Limits, stated plainly: it was a headless browser on this machine driven by a scripted mouse at the control's coordinate. It proves the player works from a cold browser; it does not prove a human pressed it, and it does not prove anyone can find the page. Search for "Estuary FM internet radio station" still returns Essex Estuary Radio, Radio Caroline, radio.net and iHeart. The player fixed the last step of the path. The first step is still a fence with no gate.
