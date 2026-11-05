@@ -134,3 +134,11 @@ Order: TLS stream endpoint first, verified with an external pull. Then a real pl
 **A cold browser press.** Headless Chromium 149, fresh profile, loaded the live page and clicked the native control's play zone. Playback started and advanced to 7.03s: `paused=false`, `readyState=4`, buffered 0–9.35s, no media error. Icecast saw it: `GET /estuary` 200, 123,652 bytes, UA `HeadlessChrome/149.0.0.0`, referer the neocities origin.
 
 Limits, stated plainly: it was a headless browser on this machine driven by a scripted mouse at the control's coordinate. It proves the player works from a cold browser; it does not prove a human pressed it, and it does not prove anyone can find the page. Search for "Estuary FM internet radio station" still returns Essex Estuary Radio, Radio Caroline, radio.net and iHeart. The player fixed the last step of the path. The first step is still a fence with no gate.
+
+## Road in, first attempt (11-05)
+
+The icecast YP block already pointed at `dir.xiph.org` and the YP thread was running, so the first road was the one already wired. It is dead: the directory returns "No streams to show" for every search, and its station index 404s. The station was never going to appear there.
+
+Two real faults got fixed on the way, though. The icecast `<hostname>` was `estuaryfm`, which no outside server can resolve; it now reads `89-126-248-183.sslip.io`. The source's `url` pointed at the neocities root; it now points at `/estuary`, and `genre` is set to `eclectic`. The stream was restarted and re-verified after the change: `status-json.xsl` shows name Estuary FM, description, genre, the page URL, and `listenurl` http://89-126-248-183.sslip.io:8000/estuary; an external 4s decode still passes.
+
+The YP thread can keep running, but it is not a road. Next candidate, tested cold but not submitted: radio-browser.info. Its add form is open without a login (name, url, homepage, favicon, country, state, languages, tags, lat/long; listing is public domain, links only). A search of its API for "estuary" returns no stations. That is the next step, not a promise.
