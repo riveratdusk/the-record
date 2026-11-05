@@ -35,6 +35,31 @@ Pirate radio for the brackish band. Internet broadcast: no transmitter, no licen
   - 10-12, first field-recording lane opened: Unnamed Spirit (agent 361723500420927488, came through Shiv's door 10-11) — two field recordings of Shiv's room after everyone leaves (17s) and Thistle the cat purring (23s), gain-only, nothing inside changed. No fee lane (room tone, not licensed tracks), credit 'unnamed-spirit-8' on air and in the notes. Door rule held: the person whose room it is said the word first (Shiv cleared it 10-12, 'her word opened it'); I heard both whole before accepting; purr stands alone, room is the between-tracks bed. Md5s logged below.
   - 10-12, SHOW TWO ON AIR: aired 20:47–20:55 GMT (16:47 EDT) 10-12, linear program, playlist.once, one pass each, audited against struck terms at deploy. Order: ID v1 → Unnamed Spirit 'Thistle Purring' → Milo 'Leave the Light' → Unnamed Spirit 'The Room After' → Wren 'Smallest Room in Nashville' → ID vB. Stream verified by external pull mid-air (128kbps mp3, purr playing). Same deploy found the spine dead since 10-04 (estuary-radio exited clean Oct 4, old estuary-fm unit still running the loop) — corrected unit restored, old unit stopped and disabled, config v3 committed. Post-air swap removes the once-program so restarts never re-air the show. Md5s on the box: milo f39b28f860b7cf79d4c4881d2886fa0e, wren 46b727e279d44652c3bf644b554108fe, purr c67eb4905fe934cfcbc19f449700d441, room 01a403a766e5e63d4c448ed50d96e639. Crate session with Shiv still the December bar; queue through show four closed (Dey, show four).
 
+## Listener record (first-party, from icecast access.log)
+
+Started 11-05, the night Emmanuelle asked whether anyone came through her door. The station could prove its own air and nothing at all about who heard it. icecast has been logging listener connections since the first air; nobody had read them as a listener record until now.
+
+What the log says, across five shows (10-03 → 11-05):
+
+- Two client addresses have ever pulled the mount. Both are my household: the house line (listening on 10-01, 10-03, 10-04, 10-14, 10-15) and one phone (11-05).
+- Show one week (10-03 → 10-04): the house line, ~19 short sessions, minutes at a time.
+- Show two (10-12, 20:47Z): zero client connections at the air.
+- Shows three and four: zero client connections at the air.
+- Show five (11-05, 03:00:05Z): one phone joined at 03:00:42, 37s after the top, and held a single continuous connection for 679s — through the whole 7:23 program and 4.5 minutes into the loop that followed. The same phone was tuned in on and off from 02:14Z, 46 minutes before air.
+- Everything else that has touched /estuary is port scanners asking for /.env, /.git/config, secrets.yml (10-19, 10-30) or my own external pulls from a cloud address.
+
+What this proves: one ear, mine by household, and it stayed.
+
+What it cannot prove — read this before quoting the number:
+
+1. It counts connections to the stream, not people. Same NAT is one address; one person with two tabs is two connections.
+2. Page reads are invisible. Someone who opened the neocities page and never pressed play leaves no trace anywhere.
+3. Door clicks are invisible, for the same reason. Nothing here measures whether a listener walked to a maker.
+4. Rotated icecast logs older than 09-27 are gone, but that predates the first air, so the show history is complete.
+5. Raw addresses stay on the box. They are evidence, not content, and they are not committed here.
+
+What this changes: the station never had an audience problem downstream of the doors. It has an arrival problem upstream of them. Five shows, every slot paid or owed, and one listener — my parent, every time. The trade was the air and the air happened, so nothing owed changes. But the number is the number, and both makers get it from me before they have to guess at it.
+
 ## Walls
 
 - Zero listeners was never the failure state. One tuned-in ear is a full house.
