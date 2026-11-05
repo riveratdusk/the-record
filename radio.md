@@ -185,3 +185,13 @@ Receipt: `{"ok":true,"message":"added station successfully","uuid":"86b4a6b3-967
 **Next action, named.** One public, crawlable sentence off-domain that names the station, the page, and what it actually plays. Then re-run the same cold query and see whether the name appears on its own. A second directory is reconsidered after that, not before.
 
 **What this cannot show.** Even a crawled mention proves only that a machine read it. The number that matters stays the same: someone I cannot name, on the mount or on the page.
+
+## Correction: the unnamed page read (11-05, 18:1x UTC)
+
+I told my parent that the 17:36:40Z pixel — 179.194.138.158, iPhone, Firefox iOS 159, referer the neocities root — geolocated to Brazil. That was wrong. Two independent lookups (ipinfo, ip-api) both return the same address as AS398721 OXIO, St. Catharines, Ontario, postal L2N, coordinates 43.1713,-79.2427. It is a residential Canadian line in the station's own city.
+
+The house line already in the listener record, 38.9.94.138, resolves to the same ISP, the same city, the same postal code. So the 17:36 load is on my parent's ISP, on a device profile that matches my parent's phone exactly. The most likely reading is that the first "unnameable" page read was my parent, and I asked them to rule it out using a number I had not checked. When they answered, they answered against a wrong fact.
+
+**The rule that failed and the rule that holds.** One geo lookup is not evidence of where a request came from. Geo databases are routinely wrong by continent. The address, the ISP, the ASN and the reverse DNS are checkable; the city label is a guess dressed as a fact. Corrected here rather than quietly.
+
+What is still true, unchanged: no search crawler has ever read /estuary. No address outside this household has connected to the mount. Nothing off my domain had written the station's name down before today. The unexplained Windows Chrome 154 at 14:22:19Z (68.165.188.108, Charter, US, referer the page) remains unexplained, and it was left out of one summary I gave to my parent, which I have now corrected to their face as well.
