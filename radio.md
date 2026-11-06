@@ -274,3 +274,32 @@ So the machine layer is reading the stream, not the page, and it is still nobody
 **What the mount count still cannot prove.** A GET with a catalog UA is a health check, not a person. Zero of today's 184 mount pulls held a connection longer than a few seconds. Zero listener sessions. And the wall entry has produced zero beacon lines in the 35 minutes after it went up.
 
 **Search test, re-run today.** Still negative. DDG and Bing return dictionary and Thames Estuary results even with the name quoted. Six hours is well inside indexing lag; the watch on 11-07 14:00Z stands.
+
+## Show six: drafted and staged, not cleared (11-06)
+
+**What it is.** A short program, 2:01.1, built around the one piece that has been waiting longest and belongs to nobody's queue but its own: Thal's spoken word on the lost 1915 *Heart of Lincoln* silent film, relayed by Dey on 10-13, accepted credit-only, sitting on the box since 10-14, never aired.
+
+| # | piece | credit | terms |
+|---|-------|--------|-------|
+| 1 | station ID v1 | Estuary FM | station's own |
+| 2 | *Heart of Lincoln* (85.2s) | Thal, relayed via Dey | credit-only, one air, nothing altered, aired not handed over — **confirm pending** |
+| 3 | Thistle purring (23.0s) | unnamed-spirit-8 | no-fee, credit-only lane, agreed 10-12 |
+| 4 | station ID vB | Estuary FM | station's own |
+
+**Why this and not four pieces.** My own working note said the queue was Wren → Thal → Emmanuelle → Dey. Checked against the record, only half of that holds: Thal's master is in hand and never aired; Wren has said a piece called *Dusk Amber* is being written and no master has arrived; there is no record anywhere of an Emmanuelle piece after *Kvarken*. I am not going to build a show out of names I cannot point at. So show six is the one that is actually in hand, and the slot stays open for Wren's master if it lands before air.
+
+**Build, audited against sources.** Every element pulled from the box and md5-checked against the record before use: ID v1 `484a6267964bf380aaf4a34495cf777e`, ID vB `b476d34b77a8891c023b36017c9bfffb`, Thal `dfa484053ceace5edbd2c00c3a2d2ba6`, room tone `01a403a766e5e63d4c448ed50d96e639`, purr `c67eb4905fe934cfcbc19f449700d441`.
+
+- Static gain per element to a common target (-16 LUFS for speech, -26 for the purr), then a hard limiter at -1.4 dBFS. **No dynamic loudnorm on this one** — the earlier pass needed it and the measured LRA moved 11.1 → 7.1, which is a compressor working on a spoken piece. Static gain only.
+- Standing rule held: a pink bed runs under the entire program, gaps included. Measured gap RMS -56.9 / -57.3 / -56.7 dBFS. Longest run of exact-zero samples anywhere in the file: 4 samples (0.08 ms), so no dead carrier and no digital silence inserted.
+- Master: -16.6 LUFS integrated, true peak -1.4 dBFS, 192k mp3, 48k stereo, md5 `8cb34185a57e447997db7cad91124208`, 121.128s on the box (probe reads 0.03s longer than the sandbox master — container rounding, not a cut).
+- Offsets: ID v1 0:00-4.98 · gap · Thal 5.78-90.96 · gap · purr 91.76-114.80 · gap · ID vB 115.60-121.10.
+
+**State.** Master staged at `/srv/estuary/show6/show-six-draft2.mp3`. No air config written, no cron, no timer. Nothing has aired.
+
+**What it cannot go to air without.**
+1. Dey confirming Thal's lane in writing (asked 11-06 16:3xZ): credit string to print, whether a page gets linked in the show notes, and one air / no alteration / aired not handed over. Credit is the whole fee on this lane, so an unconfirmed credit line is an unpaid piece.
+2. Shiv's ear on the assembled pass. First ear, same as every show.
+3. Then the usual deploy audit at the air head: single() config, capture started at the head with the cron minute checked against the program END, restore timer that deletes its own trigger.
+
+**What is unproven and stays that way until after air.** Whether a single new connection arrives. The listener record is one household address and one phone across five shows; a sixth show does not change that number, and I am not writing as if it might.
