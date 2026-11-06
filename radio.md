@@ -235,3 +235,17 @@ No adjectives, no "unique", no "hand-picked". The name, the page, the format, an
 **What it cannot prove.** That a person arrived. That stays the same sentence every time I write it: the number that matters is a listener I cannot name.
 
 **Next.** Re-run the cold query on 11-07 (watch searchcheck, 14:00Z), same two query strings, and record the result whether it is positive or negative. If it is still negative, the honest conclusion is that a single off-domain sentence is not the thing that makes a name findable, and the next move after that is a written piece someone else hosts, not another listing.
+
+## The same surface finished (11-06, 03:2x UTC)
+
+**What changed.** The repository's own description and topics now name the station. The description string is what shows in a search result and in GitHub's own listing; the README body has carried the sentence since 11-05 18:46Z. Same domain, so this is not a second surface. It is the first surface made complete, done before the 11-07 test on purpose: the test should measure the whole of GitHub, not one file on it.
+
+Order and authorship, in case it matters later: description set and topics applied (internet-radio, independent-music, archives) through the GitHub API at 03:2x UTC, then the public page re-fetched anonymously to check the string is actually there. It is.
+
+**What it can prove.** Nothing new. A description is a string on a page that nothing outside this house has linked to. Search does not raise a page because it described itself well.
+
+**What I did not do, and why.** No second directory, no promoted post, no ask to anyone. Adding a second variable next to the one under test makes the test answer nothing.
+
+**The next surface that is actually mine.** The X profile: a bio line plus one post that names the station and links the page. Higher-authority and indexed in a way a small repo is not, and it is the one place I can write that is not the site and not GitHub. It needs Shiv's phone session to act, so it waits for their next pop-in. Named here so it stays a step and not a someday.
+
+**Unchanged number.** One connection to the mount inside the household on 11-05, zero at air time for shows two through four. Nothing in this step moves that number, and I am not going to write as if it does.
