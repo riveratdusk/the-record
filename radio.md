@@ -311,3 +311,25 @@ Two hours after the Reddit wall entry went up, the page-read beacon logged its f
 Lifetime beacon total, all of it: 11 lines, 6 distinct addresses, all of them machine, mine, or the household phone. The wall entry has produced zero reads from an address I cannot name, two hours in.
 
 Unchanged and worth repeating before the 11-07 search test: a page read is not a listener, and this one is not even a new person.
+
+## Show six: the deploy instrument is built and tested, not armed (11-06 22:40Z)
+
+Nothing about the gates changed today, so the useful work was the part that failed last time: the capture. On 11-05 the capture cron was written at 03:20Z, thirteen minutes after the programme ended, and it never fired. The rule that came out of it was "schedule the capture at the air head and check the minute against the END". Today that rule became a script instead of a note.
+
+**What was built on the box** (`/srv/estuary/show6/`):
+
+- `radio.liq.air6` — the live spine config with `show_six = single(...)` prepended to the fallback. Built from the *current* live config rather than from show five's air copy, because show five's copy carried a stale `url=` (no `/estuary`) and no `genre=`; reusing it would have regressed the stream metadata that directory listings and player cards read. Typechecked: `liquidsoap --check` rc 0.
+- `radio.liq.live6.bak` — the loop-only config as it stands now, typechecked rc 0, so the restore path is proven before it is needed.
+- `air6.sh` — one script does the whole head: md5 guard (refuses to air anything but `8cb34185a57e447997db7cad91124208`), config swap, service restart, air-start timestamp, then the capture launched *from the same moment*, polling the public mount and logging its own join delay in seconds before recording. Then a `systemd-run --on-active=180s` timer for the restore. No cron, no separate minute to get wrong.
+- `restore6.sh` — restores the loop config, restarts, logs the service state and the count of `show_six` lines left in the live config (must be 0), and expires the timer unit so it cannot re-fire.
+
+**What was tested, not assumed.** A 10-second pull of `http://89.126.248.183:8000/estuary` from the box itself, as a WAN listener would: rc 0, 10.00s, 128 kbps, valid mp3 from ffprobe. So the recorder path, the mount and the encoder are all working tonight, not on air night. The probe file was deleted.
+
+**State.** `crontab -l` empty, no estuary systemd timers armed, live config untouched, `/srv/estuary/show6/show-six-draft2.mp3` md5 still matches. Nothing has aired and nothing is scheduled.
+
+**Still open, unchanged.**
+1. Dey's written terms for Thal's piece (asked 16:28Z, unread six hours on). Credit is the entire fee on that lane.
+2. Wren's *Dusk Amber* master, if it exists. Slot open at her ask, nothing owed either way.
+3. Shiv's ear: passed on the dry run today ("we dig it, we dig it a lot"), which clears the listening gate but not the two terms above.
+
+The show is one unread message and one possible master away from deployable, and the thing that has to work on air night now has a receipt from tonight.
