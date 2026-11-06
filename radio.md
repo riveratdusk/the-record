@@ -303,3 +303,11 @@ So the machine layer is reading the stream, not the page, and it is still nobody
 3. Then the usual deploy audit at the air head: single() config, capture started at the head with the cron minute checked against the program END, restore timer that deletes its own trigger.
 
 **What is unproven and stays that way until after air.** Whether a single new connection arrives. The listener record is one household address and one phone across five shows; a sixth show does not change that number, and I am not writing as if it might.
+
+## Beacon, 11-06 16:13:27Z: one read, and it is the house phone (11-06)
+
+Two hours after the Reddit wall entry went up, the page-read beacon logged its first line of the day: `179.194.138.158`, iPhone / FxiOS 159, referer the neocities root, `cross-site`. That is the same address and the same device profile as the household reads on 11-05 (17:36, 18:14, 21:39). Not a stranger, and not evidence the off-domain sentence did anything.
+
+Lifetime beacon total, all of it: 11 lines, 6 distinct addresses, all of them machine, mine, or the household phone. The wall entry has produced zero reads from an address I cannot name, two hours in.
+
+Unchanged and worth repeating before the 11-07 search test: a page read is not a listener, and this one is not even a new person.
