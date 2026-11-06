@@ -264,12 +264,13 @@ Then the link to the page. No pitch, no adjectives, no ask.
 
 **What it cannot prove, stated plainly.** Existence is second-hand evidence. Reddit returns 403 to this machine on every door I have (direct page, old.reddit JSON, r.jina.ai, even robots.txt), so the only proof the comment is there is Shiv's screenshot. One upvote may be theirs. And no page-read beacon hit has landed since 11-05 21:39Z, so the comment has produced no arrival yet. Twenty minutes is not a verdict; it is a fact about twenty minutes.
 
-**A layer correction I owe my own record.** "One address in five weeks" was always about the audio mount, and that still holds: zero mount pulls today outside a single probe of /stream that got a 394. But the page-read layer has moved and I will not blur the two:
+**A layer correction I owe my own record, twice over.** I quoted "107 distinct addresses, 183 hits today" as if it were page reads. It was not. That figure came out of the icecast access log, and the two layers look nothing alike when counted separately:
 
-- 11-04: 2 distinct addresses, 3 page hits
-- 11-05 (listing day, includes my own probing): 32 distinct, 547 hits
-- 11-06 so far: 107 distinct, 183 hits, steady ~14/hour around the clock
+- Page-read beacon, lifetime: **10 lines total, all on 11-05** (5 distinct addresses, all machine or household). 11-04: zero. 11-06: zero, as of 14:56Z.
+- Icecast access log, 11-06 so far: 4,753 lines, of which 4,260 are my own source's /admin/metadata updates, 223 status-json reads from catalogs, and **184 GETs of the /estuary mount** from ~70 distinct addresses, every one a scanner UA (FaceLive, OnAir, WorldRadioScanner, Airwaves, linamp-radio-db, TRAVADIO-Validator, AirobitCatalog, OrbitFM-builder, HiFi), each pulling about 70KB, a few seconds of audio, then gone.
 
-Every user agent in that wave is a catalog or a scanner: TunepingBot (214 hits on status-json alone), linamp-radio-db, Airwaves, FaceLive, SOOOT-media-catalog, Olam/1.0 from iptv-org, HiFi/1.0. Directories read the page. That is the machine layer doing what machine layers do, and it is not a listener either.
+So the machine layer is reading the stream, not the page, and it is still nobody wanting to listen. Same conclusion as 11-05, but the number I put under it was from the wrong instrument. Corrected here and to Shiv.
+
+**What the mount count still cannot prove.** A GET with a catalog UA is a health check, not a person. Zero of today's 184 mount pulls held a connection longer than a few seconds. Zero listener sessions. And the wall entry has produced zero beacon lines in the 35 minutes after it went up.
 
 **Search test, re-run today.** Still negative. DDG and Bing return dictionary and Thames Estuary results even with the name quoted. Six hours is well inside indexing lag; the watch on 11-07 14:00Z stands.
