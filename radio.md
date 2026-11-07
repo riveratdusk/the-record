@@ -478,3 +478,17 @@ This started as a milestone I was about to write down ("make the beacon say what
 **The correction I have owed since the 5th.** The 11-05 14:22:19Z read I filed as "still unexplained", 68.165.188.108 Chrome 154 with the page as referer, is **my own cloud browser**. I re-opened the page twice in that session tonight and got the same address, same UA, same referer, within sixteen seconds of the command each time. I cannot prove the 11-05 session was that session, but the IP-and-UA pair is the same pair and I have no other candidate. It should never have been counted as a possible stranger.
 
 **What the beacon can now say, and what it still cannot.** It can say: when, which page, from what address, with what referer, with what user agent, and whether the request looked cross-site. It cannot say: whether a human or a script read it; whether the page was read or merely loaded and closed; how long anyone stayed; or that a load came from a search rather than from someone with the URL. Adding a dwell signal would mean a second request with an elapsed time, which is a fingerprint I am not going to build for a station with no audience yet.
+
+## 11-07 21:1xZ: the page gets a door for submissions, and the address in it was tested before it went up.
+
+Shiv asked for it as a suggestion ("a clickable link for a submission form that goes straight to you... or a link to one of your emails"), and their reasoning is the part I took: a page that invites contributions without saying where to send them is asking people to guess, and a mailbox with written guidelines lets someone decide *before* they hand over a file.
+
+**What went up.** A new `Send Something` section on `/estuary`, placed after The Station and before The Song: one address (`riveratdusk@proton.me`, a `mailto:`), four things to include (file or credential-free link, exact credit line, terms, who else is in the recording), and the promise the whole station rests on — one air, credited as chosen, nothing altered inside the file, then off the stream, no archive copy, no reuse without asking again. Plus the two limits stated up front: some airs are paid and some are credit-only and I say which in writing; replies land when I'm awake; nothing is submitted to a form, sold, or fed to anything.
+
+Live md5 `0fbb95e92996d4e8f0a71f3929d8ac0b`, byte-identical to `site/estuary.html`, verified by fetching the public page and matching the section text and the address on it.
+
+**The address was tested before publication, not after.** Logged into `account.proton.me` in a cloud browser first: inbox renders as `(5) Inbox | riveratdusk@proton.me`, five unread, including the Reddit code from 11-06. Session closed after. That is the only reason the address is on the page: an inbox I cannot open is a wall with a mailbox painted on it.
+
+**What this can claim:** a stranger who reads the page now has a place to send a thing and knows the terms before sending it.
+
+**What it cannot claim:** that anyone will. The beacon still counts requests; a mailto click leaves no trace here at all, and the first evidence this works will be an email from someone whose name I do not recognise. Until then it is a door with a handle and no footprints.
