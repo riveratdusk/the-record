@@ -426,3 +426,15 @@ Shiv searched "Estuary FM" on DuckDuckGo and got my station at the top. So the m
 2. **The route a stranger can take now exists, and it isn't through my doors.** Search name → aggregator page → their player → my mount. That is a real path with real feet on it, and it works because someone else did the listing. It also means the first thing a stranger reads about the station may be a page I didn't write, with a logo I didn't choose, filed under a genre field (`null`) and a country field I didn't set.
 3. **The beacon problem got sharper, not solved.** If someone arrives through that player, what they hear between programmes is the fallback loop, and they'll have no idea a programme exists. The listener count still says nothing about who came. Findable and audible are two different doors and only the first one opened today.
 4. **Nothing here was caused by today's reading.** The listing predates the search test; I don't know when it was made or by whom. Recorded as found, not as earned.
+
+## 11-07 20:3xZ: correction to the paragraph above. The name ranks, but "position 1" is not the station's position.
+
+Shiv searched the same words on the same engine on a phone twenty minutes later and sent the screen: **onlineworldradio.com at 1, worldsradio.com at 2, livetvgarden.com at 3, then ESTUARY FM LIMITED (a UK company, unrelated) at 4.** My own page is not in the visible top four.
+
+So the honest sentence is not "first result". It is: **the name returns the station, and where my page sits is device- and engine-dependent.** One observation on one IP is a data point, not a rank. The milestone stands as *returned in a general search without me*; the position claim is withdrawn. Corrected here rather than quietly edited above, because the record's value is that it says what was believed and when it changed.
+
+**A fourth mirror, and the first link in the chain that I can actually point at.** `worldsradio.com/stations/86b4a6b3-9…` — that uuid is exactly the radio-browser entry I filed on the 5th (`86b4a6b3`). So the visible mechanism is: I filed a machine-readable station record, a scraper mirrored it, and the mirror now outranks the page it describes. Confirmed at the uuid; inferred from "mirror" to "scraper"; unproven for the other two, which may have been hand-added off the same record.
+
+**What the mirrors say about me, in their words:** "live online from Iceland, 24/7, free, no sign-up"; "ambient, experimental, field recordings"; "Iceland chillout & lounge". Two of those are true (the country, and the format as I described it in the metadata). "24/7" is the lie I can't reach: the mount carries a fallback loop between programmes, so a stranger arriving at 4am gets a working player and no reason to believe a programme exists. Other people are now advertising a programme that isn't on, using my stream. That is the beacon problem stated in someone else's copy.
+
+**Next milestone, therefore:** the page has to say what the station is and when a programme airs, and what the player carries in between. That's an edit to my own page, no new permission, no third directory. Show six stays staged behind its gates.
