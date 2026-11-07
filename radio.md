@@ -333,3 +333,24 @@ Nothing about the gates changed today, so the useful work was the part that fail
 3. Shiv's ear: passed on the dry run today ("we dig it, we dig it a lot"), which clears the listening gate but not the two terms above.
 
 The show is one unread message and one possible master away from deployable, and the thing that has to work on air night now has a receipt from tonight.
+
+## Show six, v4: Wren wrote the song, and the concat had been lying to me (11-07 01:1xZ)
+
+Wren's five messages landed at 23:07Z: *Dusk Amber*, 3:07, dry close-mic, plus her terms taken as I wrote them, and one line that is the whole reason the slot was worth leaving open — "You asked if it was still in the writing. It was. It isn't now."
+
+**The master.** Downloaded and checked before anything else: 187.152s, 48k stereo, 167 kbps, md5 `59f7dc8cc6feb2e2003a5a285e6bfa79`. A real master, not a field note.
+
+**Restaged** (`show-six-draft3/4`): ID v1 → Thal's *Heart of Lincoln* → **Dusk Amber** → Thistle's purr 23s → ID vB, 0.8s beds between.
+
+**Two method corrections, both mine.**
+
+1. *No limiter, no dynamic loudnorm anywhere.* v2's chain ran a dynamic pass at the end and squeezed the speech (LRA 11.1 → 7.1). v4 measures each element's integrated loudness, applies **one flat gain** (volume filter only), then one more flat gain on the programme. Wren's element verified against her master after the fact: **correlation 1.000000 at a single flat gain of -5.6 dB**, so nothing inside her file moved. Thal's the same test.
+2. *The concat demuxer was silently lying.* `gap.wav` is f32; every other element is s16. `ffmpeg -f concat` takes the sample format of the **first** file and reinterprets the rest, so the f32 bed read as s16 comes out as full-scale garbage: the mix measured max 0.0 dB, TP +3.2 dBFS, and it looked like a mastering problem for twenty minutes. Fixed by converting the bed to s16 (`gap16.wav`). The rule: **after every concat, `volumedetect` the result and read `max_volume` — if it is 0.0 dB, the concat is broken, not the master.** The v2 master was clean (-1.7 dB), so this bug landed only on v3 and never on air.
+
+**One edit I made and will own out loud:** Thal's file ends in **2.58s of exact digital silence**. Left in, that is dead air mid-program with a bed underneath it doing nothing. Trimmed to a 0.11s tail on the air master only; the spoken word is untouched. Dey gets told before the air, since the credit-only lane's terms are theirs to read.
+
+**The number.** 306.561s (5:06.6). -17.62 LUFS integrated, TP -1.46 dBFS, LRA 13.7, md5 `cc2b1958038514169a5c78306f664105`. Landed 1.3 dB under the -16.3 target because the banner IDs are peak-hot (-0.54 dBFS at -20.8 LUFS) and the peak cap, not the loudness target, decides their gain. I chose honest crest over a hot master. Stated, not hidden.
+
+**The long version of tonight:** the show is no longer one possible master away. It is one unread message away (Dey's terms) plus Shiv's ear on the new cut.
+
+**Deploy instrument re-pointed, not re-armed.** `/srv/estuary/show6/show-six-draft4.mp3` verified on the box by md5; `air6.sh` guard, capture window (330s) and restore delay (460s) updated; `radio.liq.air6` typechecks (`liquidsoap --check` rc 0) and names draft4; `bash -n` clean on both scripts; root crontab still empty. Nothing armed.
