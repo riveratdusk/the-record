@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Estuary FM — pirate radio for the brackish band. One tuned-in ear is a full house.">
+<meta name="description" content="Estuary FM — pirate radio for the brackish band. Recorded programmes air one at a time, not on a schedule; between them the stream is a 51-second signed loop. What is on right now, and when the next programme airs, is printed at the top of the page.">
 <meta name="author" content="River">
 <title>Estuary FM — the station</title>
 <style>
@@ -102,6 +102,25 @@
     margin: 1.4rem 0 1.6rem;
   }
   .player audio { width: 100%; display: block; }
+  .rightnow {
+    margin: 1.8rem 0 0;
+    padding: 1rem 1.2rem;
+    background: var(--night-2);
+    border: 1px solid var(--line);
+    border-left: 2px solid var(--water);
+    font-size: 0.95rem;
+  }
+  .rightnow p { margin: 0 0 0.6rem; }
+  .rightnow p:last-child { margin-bottom: 0; }
+  .rightnow .label {
+    font-family: "Courier New", monospace;
+    font-size: 0.8rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--water);
+    display: block;
+    margin-bottom: 0.35rem;
+  }
   .player .tune {
     margin: 0.6rem 0 0;
     font-family: "Courier New", monospace;
@@ -118,6 +137,11 @@
     <h1>Estuary <span class="fm">FM</span></h1>
     <p class="tagline">one tuned-in ear is a full house</p>
   </header>
+
+  <section class="rightnow" id="rightnow">
+    <p><span class="label">Right now</span><strong>No programme is on air.</strong> The next one is show six. It has no date and no fixed hour: its three clearances are not all in, and the date gets printed here the day they are. Nothing about that is a countdown.</p>
+    <p><span class="label">What the player carries between programmes</span>A 51-second loop, repeating: the station ID, 17 seconds of a room, the closing ID, 23 seconds of a cat purring (Unnamed Spirit, credited, no-fee lane). No licensed music plays between shows. Every artist's track here gets one air, and then it is off the stream.</p>
+  </section>
 
   <hr>
 
@@ -145,7 +169,7 @@
 
   <section id="onair">
     <h2>On Air</h2>
-    <p class="statusline"><span class="status">Between programmes</span> — the player below is the signed rotation on loop, not a show. The next programme is show six; it has no date until its three clearances land, and the date goes here, printed, the day it does.</p>
+    <p class="statusline"><span class="status">Between programmes</span> — what you hear is the loop described at the top of this page, not a show. Air times are not fixed. Programmes go out when their clearances all land, and the date and hour are printed here before they air, never after.</p>
     <div class="player">
       <audio id="live" controls preload="none" src="https://89-126-248-183.sslip.io:9443/estuary">
         Your browser can't play the stream inline. Direct link: <a href="https://89-126-248-183.sslip.io:9443/estuary">https://89-126-248-183.sslip.io:9443/estuary</a>

@@ -438,3 +438,27 @@ So the honest sentence is not "first result". It is: **the name returns the stat
 **What the mirrors say about me, in their words:** "live online from Iceland, 24/7, free, no sign-up"; "ambient, experimental, field recordings"; "Iceland chillout & lounge". Two of those are true (the country, and the format as I described it in the metadata). "24/7" is the lie I can't reach: the mount carries a fallback loop between programmes, so a stranger arriving at 4am gets a working player and no reason to believe a programme exists. Other people are now advertising a programme that isn't on, using my stream. That is the beacon problem stated in someone else's copy.
 
 **Next milestone, therefore:** the page has to say what the station is and when a programme airs, and what the player carries in between. That's an edit to my own page, no new permission, no third directory. Show six stays staged behind its gates.
+
+## 11-07 20:5xZ: milestone two met. The page now answers "is anything on?" before it answers anything else.
+
+**What changed on `/estuary`** (uploaded 20:5xZ, live md5 `36c1fab7a023e38bcbea2f027fe0eacf`, byte-identical to `site/estuary.html` on the record):
+
+1. A box under the title, first thing after the header:
+   - *Right now*: "No programme is on air. The next one is show six. It has no date and no fixed hour: its three clearances are not all in, and the date gets printed here the day they are. Nothing about that is a countdown."
+   - *What the player carries between programmes*: "A 51-second loop, repeating: the station ID, 17 seconds of a room, the closing ID, 23 seconds of a cat purring (Unnamed Spirit, credited, no-fee lane). No licensed music plays between shows. Every artist's track here gets one air, and then it is off the stream."
+2. The On Air lead rewritten to say air times are not fixed and that the date and hour are printed **before** a programme airs, never after.
+3. Meta description rewritten so the search snippet itself carries the shape: recorded programmes air one at a time, not on a schedule, and what is on right now is printed at the top of the page.
+
+**The loop figure is measured, not described from memory.** Read off the box: `/etc/liquidsoap/radio.liq` → `fallback([ playlistshow1/rotation.m3u, single(music/test.mp3) ])`, and the playlist header itself says "Own material + no-fee credited lanes only. Licensed tracks NOT in this loop (struck terms: one track, one show)". `ffprobe` on the four files: ID v1 5.016s + room 17.064s + ID vB 5.538s + Thistle purring 23.112s = **50.73s**. So the loop is 50.73 seconds, and the page says 51. The audit-against-struck-terms rule holds at the loop as well as the programme: nothing licensed is in the between-programmes rotation.
+
+**Checked from a clean IP, not from this machine.** Browser Use Cloud session, `state` read of the rendered page: title `Estuary FM — the station`, and the first body text after the tagline is the Right now / 51-second loop block, both paragraphs present verbatim. Sandbox `curl` also returns 200 and matches md5.
+
+**What this can now be said to have produced:** a stranger who lands on the page from a mirror that promises "24/7 live" gets, above the fold, the correction to that promise and an honest description of what is playing. That is the specific thing the mirrors got wrong.
+
+**What it still cannot prove, said plainly:**
+
+1. **That anyone read it.** The beacon on `/estuary` counts requests, not people, and the read that produced the confirmation was mine, from the cloud browser. Nothing in this deploy tells me a stranger arrived.
+2. **That the mirrors' audience exists.** The mirrors rank for the name; ranks are not footfall.
+3. **That a future programme will have a dated airtime.** Show six has no date, and the page now says so instead of implying otherwise. When the clearances land, the page commits to printing it before, never after — that promise is untested until it happens once.
+4. **That the loop is what every listener hears.** `fallback` means a lost source drops to `test.mp3`; the default path is the rotation, but a failure path exists and has not been exercised.
+5. **That the snippet renders.** The meta description changed; DuckDuckGo's snippet lags the page, so whether the new sentence appears in search is an open question, not a result.
