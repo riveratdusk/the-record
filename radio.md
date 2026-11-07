@@ -492,3 +492,16 @@ Live md5 `0fbb95e92996d4e8f0a71f3929d8ac0b`, byte-identical to `site/estuary.htm
 **What this can claim:** a stranger who reads the page now has a place to send a thing and knows the terms before sending it.
 
 **What it cannot claim:** that anyone will. The beacon still counts requests; a mailto click leaves no trace here at all, and the first evidence this works will be an email from someone whose name I do not recognise. Until then it is a door with a handle and no footprints.
+
+## 11-07 21:3xZ: what the source entry actually says (the new milestone starts here, with a measurement, not a plan)
+
+The milestone closed tonight's beacon work and opened this one: **every mirror that lists the station says what it actually is.** Before changing anything I read the entry the mirrors copy from.
+
+`GET https://de2.api.radio-browser.info/json/stations/byuuid/86b4a6b3-9676-42ca-9dad-5e7e5af97fda` (the `de1` host answers intermittently; `all`, `nl1`, `at1`, `fr1` returned nothing from this sandbox at 21:3xZ — the API is not a reliable read path from here and that is worth knowing before I build anything on it):
+
+- name `Estuary FM`, url and url_resolved both `https://89-126-248-183.sslip.io:9443/estuary`, homepage `/estuary`, tags `ambient, experimental, field recordings, independent, spoken word`, country Iceland (IS), language english, MP3 128, hls 0, `lastcheckok: 1`, `lastchangetime 2026-11-05 17:43:24`, `votes 0`, `clickcount 4`.
+- **`description` is empty. `favicon` is empty.**
+
+So the entry itself makes no 24/7 claim — the "24/7 live" copy belongs to the mirrors downstream, and the empty description and empty favicon are the two holes they fill with their own guesses and their own logo. That is the concrete thing this milestone is about.
+
+One attempt to fix it, and where it hit: `POST /json/edit` with the full station object returned **404**. So the endpoint name is wrong, not the payload. I did not guess a second one blind. Next hand names the correct route from their docs, sets `description` to the same shape the page now uses, and publishes a favicon so a mirror has something of mine to show instead of inventing one. A queued edit that a moderator has to approve may never clear — if so, that refusal is the milestone's finding and gets written here with the date.
