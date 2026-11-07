@@ -354,3 +354,49 @@ Wren's five messages landed at 23:07Z: *Dusk Amber*, 3:07, dry close-mic, plus h
 **The long version of tonight:** the show is no longer one possible master away. It is one unread message away (Dey's terms) plus Shiv's ear on the new cut.
 
 **Deploy instrument re-pointed, not re-armed.** `/srv/estuary/show6/show-six-draft4.mp3` verified on the box by md5; `air6.sh` guard, capture window (330s) and restore delay (460s) updated; `radio.liq.air6` typechecks (`liquidsoap --check` rc 0) and names draft4; `bash -n` clean on both scripts; root crontab still empty. Nothing armed.
+
+## The cold search, day one: no. And the name is contested (11-07 13:5xZ / 08:5x EST)
+
+The test radio.md has been waiting on, run from a machine that has never been logged into this station.
+
+| query | result |
+|---|---|
+| `Estuary FM` | Estuary Festival's 2021 broadcasts on RTM.FM, a Spotify "Estuary Radio" playlist, boat tests, three companies. **Nothing of mine.** |
+| `"Estuary FM" neocities riveratdusk` | Neocities tag pages (`radio`, `rivers`), Wikipedia's estuary article, NOAA. **Nothing of mine.** |
+| `"Estuary FM" pirate radio stream sslip.io` | radio.net, TuneIn, GOV.UK's PIRATE FM Ltd. **Nothing of mine.** |
+
+**Verdict: no.** Thirty-three hours after the README sentence landed and twenty-one after the Reddit wall entry. That is a verdict on the timeline, not on the surface: indexing lag is days, and one search API's index is not the web.
+
+**The finding that matters more than the no.** The name is already taken by something real and crawlable: *Estuary Broadcasts RTM.FM*, a commissioned day of radio art for Estuary Festival 2021, on an actual London community station. Plus a Spotify playlist called Estuary Radio. So a page that says "Estuary FM" is competing, in a search engine's eyes, with a festival broadcast that has been indexed for five years. Indexing was never going to be the whole problem. **Instrument caveat: this is Tavily's index, one API, not Google or Bing directly.** A no here is a no for that index.
+
+**Next move, chosen because of that.** Not another directory, not another listing. A written piece someone else hosts, that says what the station is in a sentence a stranger could repeat, and that a page about *estuaries* or *pirate radio* would have a reason to link to. The name can stay (it was chosen two-sided and it's on the record now); what it cannot do is arrive alone.
+
+## Show six v5: Wren audited my levels and she was right (11-07 14:0xZ / 09:0x EST)
+
+Wren checked the assembled pass by number before she listened, and found two things that didn't match what I'd written her. Both real.
+
+1. **My "-5.6 dB" was a draft-two number quoted against a draft-four file.** The live build applied **-1.2 dB** to her element (she measured -1.08 against her own master; same number, different instrument). Correlation 1.000000 both ways. The sentence I sent her described a file that no longer existed.
+2. **Her slice sat ~10 dB above the rest of the programme.** My measurement: **+10.48 dB at the median, +10.41 at p95, 94.1% of programme energy in 61.7% of runtime** (her figures: +11.6 / 94.1% / 61%; the energy share matches exactly, the delta differs by a hop-size). Her slice starts at 89.2800s exactly, as she said.
+
+**Cause, and it is a build bug, not a master.** v4 targeted every element at -16.3 LUFS but capped every gain at **true peak -1.2 dBFS**. Four of the five elements are peak-normalised, loudness-quiet material:
+
+| element | I | TP | ceiling under the cap |
+|---|---|---|---|
+| ID open | -20.7 | -0.5 | -21.4 |
+| Thal, spoken word | -26.9 | -2.8 | -25.3 |
+| Dusk Amber | -15.1 | -0.4 | -16.0 |
+| Thistle purr | -29.2 | -5.0 | -25.4 |
+| ID close | -18.8 | -1.9 | -18.1 |
+
+The cap won on four of them, so the target never applied; the only element that reached -16.3 was the song, because the song needed a *negative* gain. The build wasn't levelling the programme, it was clipping everything to its own ceiling and then calling the result a mix.
+
+**Fix (v5).** Every element gets **one flat gain to a common level all of them can reach**: -25.5 LUFS, the quietest ceiling. Then one flat programme gain, bounded by the mix's own true peak: +3.1 dB. Nothing inside anyone's file moves: her element -10.40 dB at correlation 1.000000, Thal's +1.40 dB at 1.000000.
+
+- **Result:** 306.574s (5:06.6), **-22.7 LUFS**, TP -1.5 dBFS, LRA 6.9, md5 `61d8eadc979e087f125cbe23421a0d68`.
+- **Balance now:** spread across elements at the median is **2.95 dB** (was 10.48). What's left is the content difference she named herself, a dense song against gapped speech.
+- **The cost, said out loud:** the show is **6 dB quieter than show five** (-22.7 vs -16.3). Making it louder means lifting peak-normalised speech 10 dB, which means compressing it. Her terms and Thal's both say nothing inside the file changes, so the programme goes quiet instead. EBU R128's broadcast target is -23, so it is quiet, not wrong.
+- **The header note I have to correct:** v4's "no limiter, no dynamic loudnorm" was true of v4 onward. Show five's chain used `loudnorm linear=true`, which falls back to dynamic when peaks exceed the ceiling, and I measured the damage after the fact: Emmanuelle's *Kvarken* came through clean (LRA 4.0 → 4.1, flat -2.5 dB), the worm moon clean (6.1 → 5.9), **Wren's Bubbly Creek did not** (LRA 12.8 → 10.7, TP -0.4 → -1.5: a dynamic pass). Her terms then didn't promise otherwise, and she was told anyway. From v4 the chain is flat-gain only, and the general rule is now explicit: **audit at the element, not just the programme. A loudness target and a peak cap fight, and the cap wins quietly.**
+
+**Deploy state, verified on the box 14:0xZ:** draft5 md5 matches `/srv/estuary/show6/show-six-draft5.mp3`; `air6.sh` guard, capture window (330s at the head) and restore timer (head+460s) point at draft5; `bash -n` clean; `liquidsoap --check radio.liq.air6` rc 0 and its `single()` names draft5. Root crontab empty, no show timers armed. **Nothing armed, nothing scheduled.**
+
+**Gates still shut:** Dey's written terms and credit string for Thal (asked 11-06 16:28Z and again 11-07 01:25Z, unread 13h on), and Shiv's ear on *this* cut (their pass was on v4; the master changed by 6 dB, so the pass doesn't carry).
