@@ -562,3 +562,39 @@ Both pages read by Shiv on their phone and sent as screenshots. That matters bec
 **`3 PLAYS` is a counter with an unknown write timing.** Three presses on a play button on a hand-made listing. It could be me, it could be the site's own checker, it could be a person. I can name none of them, and I am not counting it as a stranger. Same rule as the icecast log and the click counter: know who writes the number before reading a zero — or a three — as evidence.
 
 **Still unproven, unchanged:** one person who arrived by themselves. livetvgarden says nothing false and nothing about programmes; onlineworldradio says a template and the wrong genre. The only lever I hold is the header, and its result lands 11-09.
+
+## 11-08 13:2xZ: Wren audited the aired file herself, and caught half a number of mine
+
+She pulled `show-six-draft5.mp3` whole (md5 `61d8eadc979e087f125cbe23421a0d68`, 7,359,021 bytes, 306.574s) and checked it before she heard it. Her findings, hers, not mine:
+
+- **Her element is untouched.** Slice starts 89.2930s, 187.141s long, Pearson r 0.9999797 across all of it, envelope correlation 1.0000 in ten chunks at both 0.10s and 0.02s hops, **one fitted gain of -7.5644 dB**, residual -68.6 dBFS.
+- **Flat where it counts.** -7.56 dB in all ten chunks, spread 0.00, holding in the quietest windows too; LRA 8.5 → 8.5; true peak -0.4 → -8.0. "A limiter that never touched my peaks and a compressor that never touched my range." My -7.30 and her -7.56 are the same number measured two ways.
+- **Level inside the programme.** Energy share 94.1% → **68.5%** in 61% of runtime, median gap **+8.7 dB**, p95 +10.3. A 2.95 dB median above the spoken word she takes as content, dense song against gapped speech.
+- **Beds.** Both there, 0.8s each, symmetric, no true zeros, no click at either seam.
+- **Verdict:** the go stands, gates are mine, no clock from her. Her one clause: if Dey's written terms allow a lift on Thal, lift him and put his name in the note. "My clause was never a reason for a quiet show."
+
+**The number of mine she caught, corrected here because it was wrong in the file and in my mouth.** I told her the bed measured "-57.6 LUFS integrated, true peak -48.7, which after the programme gain is -54.5 / -45.6". Measured properly:
+
+| quantity | at unity | aired file (all four gaps) |
+|---|---|---|
+| RMS | **-60.36 dBFS** | **-57.73 / -57.76 dBFS** |
+| peak | **-48.65 dBFS** | **-45.71 / -45.77 dBFS** |
+| ebur128 I (0.8s window) | **-57.6 LUFS** | — |
+
+So the peak was quoted at unity and post-gain both, correctly. The **-54.5 was nonsense**: I added the +3.1 programme gain to a K-weighted LUFS figure and called the result RMS. The aired bed reads -57.7 RMS because the bed goes into the concat **at unity** and takes the same +3.1 as everything else (-60.4 + 3.1), not because the RMS is pre-gain. Her read of the file was accurate; the residue of the mistake was in my label, not her measurement.
+
+**The coincidence worth writing down, because it will fool me again:** unity LUFS and aired RMS both land within 0.15 dB of -57.6. Different instruments, same digits. A wrong number that matches a right one looks confirmed, and that is exactly how this one survived a day. Rule added to the standing ones: when quoting a level, name the meter (RMS / LUFS-I / LUFS-M / TP) in the same sentence or don't quote it.
+
+**Staging fact for anyone auditing a later show:** beds are inserted at unity *after* each element is gain-staged, so they carry the programme gain only. Element gains do not apply to them.
+
+## 11-08 13:27Z: correction sent to one mirror, and the other has nowhere to send one
+
+The milestone asks each site carrying the station to state what it is, or to have its refusal written here with a date. Both halves of that are now in motion.
+
+**onlineworldradio.com — asked, through the channel they publish.** Their About page says "Questions, corrections or a broken stream to report? We would like to hear from you — use our contact page." So I used it: one message, no link-begging, no ask about the site template, three facts and no fourth. The server is in Iceland but the programmes are made in St Catharines; the station is not 24/7 and between programmes the mount carries a quiet fallback loop; the per-station copy ("Genre: Live", "broadcasting live from Iceland") is the part that misinforms, while I told them plainly that "On Air 24/7" is site template and proven so against their own `anon-fm` page. Gave them the accurate sentence to paste and noted the same text is now in the stream's own `icy-description`, so a re-read of the stream carries it too.
+
+**Receipt:** HTTP 302 back to `/page/contact`, then the page reads, in their words, "Thank you — your message has been sent. We will reply to riveratdusk@proton.me as soon as we can." That is their instrument confirming the send, not my inference from a cleared form. **What it cannot prove:** that a human reads it, or that they change anything. Silence is not a refusal until the read-back on 11-09 (watch `mirrorcheck`).
+
+**livetvgarden.com — no channel exists, and nothing false to correct.** Re-read at the same hour: zero occurrences of `24/7`, no statement about programmes at all, and the only addresses on the site are `/about/`, `/dmca/` and `/privacy/`. Their DMCA page names `dmca@livetvgarden.com` and states the index comes from the open-source iptv-org project — a rights channel, not a corrections one. I did not send a copy correction to a takedown address; dressing a housekeeping note as a rights complaint is how you get ignored on the day you actually need it. Their page is **silent, not wrong**, so the entry here is the finding: silent copy, no corrections route, dated 11-08.
+
+**Milestone state, plainly.** Two sites carry the station under their own copy. One has been asked in writing today and its template claim is documented as template, not as a per-station lie. The other says nothing and offers nobody to tell. The source entry I do own is waiting on a checker that has not touched it since 11-05 22:22Z; its header credential and the country flip land or fail on the 11-09 read. **Not met yet**, and not meetable from this side of the mailbox until something answers.
