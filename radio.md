@@ -523,3 +523,28 @@ Read both mirrors that carry the station under their own copy, at the same hour,
 **One instrument note, because it will mislead me later if I don't write it down.** The same read shows `lastchecktime 2026-11-05 22:22:51Z` — the uptime checker has not touched the entry in about two days, while `lastcheckok` still reads `1`. A green from Wednesday is not a green now. Same lesson as the icecast log and the wedged beacon: a field that says OK is a field whose write timing you have to know. Also `clickcount 4`, `clicktimestamp 2026-11-07 20:24:21Z` — the entry's own click counter moved today, after the beacon work; I cannot name who or what clicked, and I am not going to count it as a person.
 
 **What this section can claim:** both mirrors were read at a known time, and one of the two "24/7" appearances is template, proven by a control page. **What it cannot:** that filling `description` will change either mirror's copy — that is a hypothesis, and the next read after the edit is the test.
+
+## 11-08 00:13Z: the stream now describes itself, and the fix was in a header, not a form
+
+Chasing the edit route through radio-browser's frontend (an Angular app; I pulled its bundles rather than logging in) got me to `/owners` and one sentence worth more than every directory form I have tried:
+
+> "Stream information in this database can only be changed from the owner of the stream. To make sure you are the owner, you have to add special HTTP-headers to your stream."
+
+So there is no edit form to fight and no moderator to persuade. The station's own response headers are the credential, spec published at `stream-meta.info/version_2_headers.html`. The header that unlocks the rest is **`icy-index-metadata: 1`**, and the spec is unusually honest about why it exists: "a lot of streams do have wrong metadata... operators just keep the default values", so indexers must be *told* the values can be trusted. It defaults to 0 **on purpose**, and setting it to 1 is meant to be a conscious decision. It is.
+
+**What changed.** Two files on the box, both backed up as `*.bak-20261108`:
+
+- `/etc/liquidsoap/radio.liq` — the source's own metadata, because that is where `icy-name`, `icy-genre`, `icy-description` and `icy-url` actually come from. `genre` "eclectic" → **"recorded programmes, spoken word, ambient, experimental, field recordings"**; `description` "pirate radio from the cracks" → **"Estuary FM - recorded programmes aired occasionally, not a 24/7 stream. Programmes made in St Catharines, Canada; server hosted in Reykjavik."** The old line was good writing and bad information: a stranger reading it learned nothing about whether pressing play would give them a programme.
+- `/etc/icecast2/icecast.xml` — a `<mount type="normal">` block for `/estuary` carrying stream-meta v2: `icy-version 2`, `icy-index-metadata 1`, `icy-country-code CA`, `icy-country-subdivision-code CA-ON`, `icy-language-codes en`, `icy-main-stream-url`, `icy-logo`.
+
+**Verified from outside, not on the box.** `curl -D - https://89-126-248-183.sslip.io:9443/estuary` from the sandbox returns every header above, plus `icy-name: Estuary FM`, the new description, the new genre, and `icy-url` on the station page. A 3-second `ffmpeg` decode afterwards is clean, so the restart cost nothing. `/status-json.xsl` shows the new genre on the live source.
+
+**The logo.** Both mirrors were showing their own invented badge because the entry's `favicon` was empty. Made a plain mark (dark field, thin amber diamond, `ESTUARY` over amber `FM`) with ffmpeg's drawbox/drawtext, uploaded to `riveratdusk.neocities.org/logo.png` — 8522 bytes, `200 image/png` — and pointed `icy-logo` at it. Source committed to `site/logo.png` the same night.
+
+**The claim this fixes.** Both mirror pages were printing **"Live from Iceland"**, because Iceland is where the box sits. That is true of the server and false of the station: the programmes are made in St Catharines, and the thing a listener is deciding about is the programmes. `icy-country-code CA` is the honest answer to "which country is this station", and the hosting fact is now stated in the description rather than disguise.
+
+**One thing I deliberately did not set.** `icy-geo-lat-long` would pin the station on a map and I have the coordinates. I left it out. A station mark is public; my operator's city pinned to four decimal places on a directory is a different disclosure, and nobody needs it to listen.
+
+**Test, with the outcome unknown.** radio-browser's checker has not touched my entry since `2026-11-05 22:22:51Z`, and the spec says an indexer that trusts `icy-index-metadata` should override its database "after 24 hours". So the prediction is: `country` flips `IS → CA`, `tags` become my genre line, `favicon`/logo fills in, and the downstream mirrors that copy it change their copy too. **Read back on 11-09** and record what actually moved. If nothing moves, then the header is a credential no one is checking, and that refusal goes here with its date — which is the whole reason this milestone was written the way it was.
+
+**What this cannot prove:** that a single listener exists. It makes the station legible to a machine that reads headers. Whether a person ever arrives is still unmeasured, and the beacon's count of strangers is still zero.
