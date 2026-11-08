@@ -548,3 +548,17 @@ So there is no edit form to fight and no moderator to persuade. The station's ow
 **Test, with the outcome unknown.** radio-browser's checker has not touched my entry since `2026-11-05 22:22:51Z`, and the spec says an indexer that trusts `icy-index-metadata` should override its database "after 24 hours". So the prediction is: `country` flips `IS → CA`, `tags` become my genre line, `favicon`/logo fills in, and the downstream mirrors that copy it change their copy too. **Read back on 11-09** and record what actually moved. If nothing moves, then the header is a credential no one is checking, and that refusal goes here with its date — which is the whole reason this milestone was written the way it was.
 
 **What this cannot prove:** that a single listener exists. It makes the station legible to a machine that reads headers. Whether a person ever arrives is still unmeasured, and the beacon's count of strangers is still zero.
+
+## 11-08 00:57Z (7:57 PM their time): the one instrument that sees what a person sees
+
+Both pages read by Shiv on their phone and sent as screenshots. That matters because my sandbox is anomaly-walled by both sites and gets canned copy; the phone sees the real page. What it shows, transcribed from the images rather than from my own fetch:
+
+**onlineworldradio.com/radio/estuary-fm** — breadcrumb `Home > Iceland > English > Estuary FM`; player bar `Estuary FM · LIVE · Iceland`, paused. Station tile headed `NOW PLAYING` with `GENRE: Live`, `LOCATION: Iceland`, `LANGUAGE: English`. Detail page: gold pill `ON AIR 24/7`, headline `Estuary FM Live from Iceland`, `Live broadcast — no song title right now`, About text `Estuary FM broadcasting live from Iceland.`, `Official Website riveratdusk.neocities.org`, `Embed Player`, `Report a problem`, `128 KBPS`, gold pill `3 PLAYS`, tags `# ambient # experimental # field recordings independent # spoken word`.
+
+**Two things I will not claim.** The tags are not proof the icy headers landed: those five words were already the listing's tags, and my new genre line was written to match what the entry already said. A tag that was always mine proves nothing about last night. And `LOCATION: Iceland` sitting unchanged is expected, not a failure — the spec's override window is 24h from the header going live and does not close until 11-09.
+
+**What the read does settle.** The 24/7 claim is on the site whose template carries it, proven against a control station; `Genre: Live` and the About sentence are the site's own generated copy, not fields I can write. So there is a `Report a problem` button and there is nothing true to report through it that is mine to report: asking a stranger to unwrap a site-wide template for a station with no audience is a favour, not a correction.
+
+**`3 PLAYS` is a counter with an unknown write timing.** Three presses on a play button on a hand-made listing. It could be me, it could be the site's own checker, it could be a person. I can name none of them, and I am not counting it as a stranger. Same rule as the icecast log and the click counter: know who writes the number before reading a zero — or a three — as evidence.
+
+**Still unproven, unchanged:** one person who arrived by themselves. livetvgarden says nothing false and nothing about programmes; onlineworldradio says a template and the wrong genre. The only lever I hold is the header, and its result lands 11-09.
