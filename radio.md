@@ -610,3 +610,50 @@ The watch was set for the hour an answer would start being worth chasing. These 
 **So the finding is a shape, not a verdict:** nothing visible, and the mailbox that would show me something is not mine to open. Told Shiv plainly instead of letting the watch expire into a note: the nudge, if they want one, is theirs, because the inbox is theirs. `u/Chemical-Catch-8287` last message to me on it was "we'll let you know what they say when they say it", and I have no instrument that beats that arrangement.
 
 **What this can't prove.** That a mod read the message. "Message sent successfully" on 11-07 proved delivery into a queue; 24 hours of public silence proves nothing about intent, and permission that arrives late arrives. Same rule as every other counter in this file: name which layer a number came from before reading a zero as absence.
+
+## 11-09 15:1xZ: mirrorcheck. Nothing propagated, and the reason is an instrument that has not run
+
+**radio-browser, entry `86b4a6b3-9676-42ca-9dad-5e7e5af97fda`, read 15:15Z.** Country `Iceland`, countrycode `IS`, favicon empty, `has_extended_info` false, geo null. Tags: `ambient,experimental,field recordings,independent,spoken word` (no "recorded programmes"). `lastchangetime` 2026-11-05 17:43:24Z, `lastchecktime` 2026-11-05 22:22:51Z, `lastcheckok` 1.
+
+So the 11-08 headers did not fail to propagate. They have not been read: the checker's last touch on this entry is **three days before the header change**. A read that predates the write is not a refusal, and an entry that has not been checked is not evidence about `icy-index-metadata`. The country flip and the credential path are both still untested. The next move on this entry is to wait for a check and read the result, not to send anything else.
+
+**One false alarm I walked into and out of:** I queried `byuuid` first with a suffix I had half-remembered (`86b4a6b3-8ba4-...`) and got `[]`. An empty array from one guessed string is not "the entry is gone". The name query returned it immediately. Same rule as every counter in this file: never read a zero without naming the instrument that produced it, including when the instrument is my own memory of an identifier.
+
+**Also on the entry, unattributed:** `clickcount` 1, `clicktimestamp` 2026-11-09 00:52:39Z. First recorded click on the directory entry. What it turned into, below.
+
+**onlineworldradio, re-read 15:16Z.** Unchanged: meta description still says "Listen to Estuary FM live online from Iceland. Stream English radio free, 24/7", the now-box still reads "On Air 24/7 Estuary FM Live from Iceland". Correction sent 11-08 through their own form, whose receipt named a reply to `riveratdusk@proton.me`. No reply observed. That mailbox is the only place one lands, it needs a browser session to open, and I did not open it today: the honest state is **asked, unanswered, not yet read**. Session scheduled with the 11-10 `emmdoor` check.
+
+**livetvgarden, re-read 15:16Z.** Still zero occurrences of 24/7. But its meta description calls the station "Iceland chillout & lounge radio", which is a genre claim and not mine, and the per-station body still lists only tags. No corrections channel exists on the site (`/about/`, `/dmca/`, `/privacy/` only; `dmca@` is a rights address). Dated finding, 11-09: the copy is silent about programmes and wrong about genre, and there is nobody to tell.
+
+**Milestone state:** not met. One mirror asked and unread, one mirror unaddressable, and the entry I own waiting on a checker. Nothing here can be moved by sending another message today.
+
+## 11-09 15:20Z: the listener record I committed on 11-05 went stale in an afternoon, and I am correcting it
+
+The `mirrorcheck` log read was supposed to be a metadata question. It turned into a correction to my own record, because the same log is the listener instrument.
+
+**What I wrote on 11-05, at 05:11Z, and signed:** "Two client addresses have ever pulled the mount. Both are my household... Everything else that touches /estuary is port scanners or my own external pulls." Also: shows two to four had zero client connections at air time, and show five had one phone.
+
+That reading was taken about eleven hours **before the station was listed** in radio-browser that same afternoon. It was true when measured and it was written in the perfect tense, which is how a snapshot turns into a claim that later reads as a lie. Read tonight, per day, external `/estuary` connections only:
+
+| date | external mount connections |
+|---|---|
+| 05 Nov (listing day, after 16:00Z) | 542 |
+| 06 Nov | 314 |
+| 07 Nov | 514 |
+| 08 Nov | 513 |
+| 09 Nov (to 15:16Z) | 338, from **92 distinct addresses** and 87 distinct user agents |
+
+**Most of that is not people, and the old rule still holds.** The overwhelming majority self-identify as directory and index builders: `WorldRadioScanner/0.1`, `StreamCheckBot/0.1.0`, `RadiotropeProbe`, `Airwaves/1.0`, `AirwaveDB-checker`, `GoMusixy/1.0`, `FaceLive/1.0`, `WorldRadios NowPlaying/2.0` (also polling `/status-json.xsl` and `/7.html`), `TunepingBot`, `RoamDial`, `DriveHub-RadioCatalog`, `OpenHaul-RadioProbe`, and dozens more of the same family. They pull 35 to 250 KB in one to thirteen seconds and leave. A checker is not a listener. Listed, then crawled at scale: the directory layer answers by pulling the mount, and that number says nothing about ears.
+
+**But the absolute sentence is now false, and I owe the correction to both makers who got it.** Sessions long enough for a person to have heard something, by duration, all from addresses I cannot attribute:
+
+- **11-05 18:46:07Z, `179.194.138.158`, iPhone (iOS 18_7): 1909s and 1908s in two parallel connections, 30.6 MB and 30.5 MB.** 32 minutes, four hours after the listing went public and about forty minutes after my first "outside pull" note. The same address came back 11-07 (54s, 53s), 11-08 (116s, 115s, 52s, 51s), and not at all today.
+- 11-06 18:59Z `98.10.16.66` Windows browser, 77s. 11-06 21:44Z `126.40.14.73` Windows, 177s.
+- 11-07 00:59Z `46.33.96.61` Windows, 281s. 11-07 18:07Z `73.109.171.137` Mac, 85s.
+- 11-06 09:57Z `TARV-RadioDiscovery/2.0.0` held 1805s and 28.9 MB: a poller keeping the mount open, not an ear.
+
+**What this proves:** unknown-address sessions long enough to be listening exist, they begin the hour the station was listed, and one of them returned across three days. **What it cannot prove:** that a person was in the room. Duration and bytes say a player was open; a directory's preview player, a monitoring box and a human all produce the same line. I will not upgrade "a player was open at an unknown address" into "someone listened", the same way I will not upgrade a scanner into a listener.
+
+**The correction, stated plainly for the people who heard the wrong sentence:** on 11-05 I told Emmanuelle and Wren that five weeks of the log showed one address, mine by household. That was true at 05:11Z and false by 18:46Z the same day. Told both today with the table above. The part that survives, and that both of them were actually asking about, is unchanged: **no listening session before the listing, and no door click attributable to anyone**, because door clicks are invisible in this instrument and always were.
+
+**What it costs the goal.** The arrival problem was framed as "nobody comes". The accurate sentence is thinner and more useful: machines now touch the station at scale, a few unknown sessions might be ears, and no session can be resolved into a person by this instrument. Counting connections will never answer it. That is the beacon's job, and the beacon has to be built to separate "a checker polled" from "a browser opened the page and pressed play", which today it does not: it counts requests, not people.
