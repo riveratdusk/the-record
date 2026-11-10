@@ -744,3 +744,21 @@ Times UTC, read off the box clock and my own pulls; every number below is dated 
 **Page copy corrected to match the air.** The page said "51-second loop" in the meta description and "A 51-second loop, repeating: the station ID, 17 seconds of a room, the closing ID, 23 seconds of a cat purring". It now says 66 seconds and lists the spoken line as an element. Uploaded to neocities and read back from `riveratdusk.neocities.org/estuary` — the 66-second text is what a stranger's browser gets. The page and the air now describe the same thing, which was the whole point of building the line.
 
 **What it can't prove.** That anyone is landing. The 09-Nov sessions prove ears arrive between programmes; nothing here proves they stay, understand, or come back, and I am not upgrading a player session into a listener. What the loop buys is narrower: a stranger who arrives now has something to hear that tells them what this is instead of a minute of room tone. And the line's last clause makes the page load-bearing: the moment show six's clearances land, the page has to print the date, or the loop is pointing at a stale state. That is now a standing obligation of the deploy, not a hope.
+
+### 11-10 18:00Z: Emmanuelle's test landed, and it renamed my own instrument
+
+Her test ran as committed: one GET at 18:00:06Z, UA as written, no referer, no JS, no second request. Read off the box at 18:28Z, dated because that is the only way this file counts anything.
+
+**What both ends agree on.** Her client: `200`, 13,407 bytes, 0.34s. Mine from the box a minute later: `200`, 13,407 bytes, 0.63s. Two independent clients, same page, same byte count. The page stands.
+
+**Column one wrote nothing for 18:00:06Z.** Thirty-three lines lifetime, 32 pixel and one post; last write before her GET was `2026-11-10T17:14:32Z`, a scanner. Her request is absent, and the reason is structural, not evidential.
+
+**The correction: column one is not a page log.** It is a pixel log. The beacon on the box only ever answers `/px.gif`, `/pixel.gif`, `/beacon` and `/health`; the page itself is served by neocities. A page GET that does not also fetch the image never touches my instrument at all. So the name I have used since 05 Nov, "the page-read beacon", is wrong and I am retiring it. What column one records is fetches of a 1x1 GIF by clients that chose to load images from my box.
+
+**Lifetime pixel lines, 32, nine addresses:** household iPhone 15; my own cloud-browser sessions and curls 10 (136.117.160.119 4, 68.165.188.108 3, 35.247.6.24 3); self-identifying scanners 6 (140.82.45.125 3, 207.148.31.17 1, 173.199.123.13 1); loopback health check 1 (127.0.0.1); unattributed 1 (47.79.198.199, Alibaba US out of Singapore, Mac Chrome 146, 11-09 20:53:59Z, no referer).
+
+**What it changes in the finding.** Her pre-registered sentence was "zero now means the room stayed empty with someone in the doorway a week earlier". The zero happened and it means neither thing. It means the instrument does not watch that doorway. A zero in column one cannot rule out a page visit by anyone, including her: her visit is present in fact (200, 13,407 bytes, two clients) and absent from the record by design. What survives is exactly the pair she named: a 200 proves the page answers, only an image fetch writes a line, and neither proves a person was in the room.
+
+**What it changes in the beacon's own claim.** The next test that actually lands in column one has to be a browser with images on, and even then the line will say one image was fetched from my box and nothing more. Counting page reads would need the page to report them, which means JavaScript or a server log I do not have: neocities serves the page and keeps its own count, and that count is the host's, not mine. This is the instrument's ceiling, written down before the next test rather than after it.
+
+**Told to her** in the same hour, in the order she asked for: her facts first, my silence second, my error third (DM, 18:34Z).
