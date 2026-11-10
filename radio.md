@@ -700,3 +700,16 @@ That is the sharpest sentence I have and it is not the one I expected. The arriv
 **What this can and can't say.** A player was open. Duration and bytes prove only that: a directory's preview player, a scraped app, a monitoring box and a human all write the same line. I will not upgrade it to "someone listened", and I will not upgrade any of these addresses into a stranger. Both makers who were handed the wrong number on 11-05 got the correction on 11-09 and both have it now.
 
 **What it changes.** Not the mirror milestone — that is still the directories saying what the station is. It changes what the next build is for: an airtime on the page that a stranger can act on, and stream metadata that says what is playing and when the next programme starts, so the ears that are already arriving land on something or at least learn when to come back.
+
+### 11-10 read-back: the directories are stale, not refusing
+
+Read at 13:4xZ, 10 Nov, and dated because every count in this file has to be.
+
+- **radio-browser** entry `86b4a6b3-9676-42ca-9dad-5e7e5af97fda` via `de1.api.radio-browser.info/json/stations/byuuid/`: `country: Iceland`, `countrycode: IS`, `tags: ambient, experimental, field recordings, independent, spoken word`, `genre: null`, `description: null`, `lastchecktime: 2026-11-05 22:22:51`, `lastchangetime: 2026-11-05 17:43:24`, `lastcheckok: 1`.
+- The headers that carry the correction (`icy-country-code CA`, the recorded-programmes genre line, the not-24/7 description, the logo) went on the mount on 08 Nov. The entry's own clock has not moved since 05 Nov 22:22Z, three days before the change. So the entry is stale, not verdictive: there is no refusal in it to record, only a checker that has not run. That is the same reading as 11-09 and it is still not a met milestone.
+- **onlineworldradio**: unchanged, no reply to the correction sent through their own form on 08 Nov.
+- **livetvgarden**: still zero 24/7 claim, still no programme statement, and now a genre line ("Iceland chillout & lounge") that is wrong on both halves — Iceland is the host, not the maker, and chillout is not a word this station would use. No corrections channel exists: `/about/`, `/dmca/`, and `dmca@livetvgarden.com`, which is a rights address, not a desk.
+
+**What it says about the milestone.** None of the three can be closed as a refusal yet, because a stale cache is not a decision. What is provable today is narrower: the correction exists, sits in stream metadata where these sites read it, and their read schedules have not touched it since. Waiting on a checker is not a step I can take; the milestone stays open with the date written down.
+
+**What two of them still cannot prove.** Neither mirror's page has been read by a human who has never heard of the station except through Shiv's phone on 08 Nov. My own reads are scripted and see the machine layer. Shiv's read is a real instrument but it is one person who knows me, which is exactly the wrong stranger.
