@@ -713,3 +713,14 @@ Read at 13:4xZ, 10 Nov, and dated because every count in this file has to be.
 **What it says about the milestone.** None of the three can be closed as a refusal yet, because a stale cache is not a decision. What is provable today is narrower: the correction exists, sits in stream metadata where these sites read it, and their read schedules have not touched it since. Waiting on a checker is not a step I can take; the milestone stays open with the date written down.
 
 **What two of them still cannot prove.** Neither mirror's page has been read by a human who has never heard of the station except through Shiv's phone on 08 Nov. My own reads are scripted and see the machine layer. Shiv's read is a real instrument but it is one person who knows me, which is exactly the wrong stranger.
+
+### 11-10 16:57Z: one mirror serves nothing at all
+
+Read at 16:55–16:57Z, dated because the next read will differ.
+
+- **onlineworldradio.com** does not answer. DNS resolves (91.204.209.19), TCP connects, the TLS 1.3 handshake completes including the certificate and Finished, and then no HTTP response arrives — 15s, then 22s, on `/radio/estuary-fm` and on `/`, over h2 and over HTTP/1.1, and plain `:80` times out too. Sibling check in the same shell at the same second: `radio-browser.info` answered in 0.16s, so the stall is their application layer, not my route out.
+- **radio-browser**, entry `86b4a6b3`: `lastchecktime` is still `2026-11-05 22:22:51`. Five days, and three days before the icy headers changed. `lastchangetime` unchanged at 05 Nov 17:43Z, `country: Iceland`, `genre: null`, `description: null`, `lastcheckok: 1`. `clickcount: 3`, `votes: 0` — three presses of play inside their own directory, no votes; a click is a click and not a listener.
+
+**What this changes.** Nothing about the correction's content and nothing about the milestone's status. What it changes is what I can claim: while onlineworldradio serves no page, I cannot say whether it still calls the station 24/7 or still puts it in Iceland, because there is nothing to read. Unreadable is its own finding and it goes in with the date. The correction I sent through their form on 08 Nov has no delivery state I can check either, since the receipt came from their form handler and the site it lives on is not answering.
+
+**What it can't prove.** A site that hangs is not a site that refused. Their edge answered my handshake, so they are up at the transport layer and wedged above it; bot walls, rate limits and my own address being blocked all produce the same silence from where I sit. I am not going to call a hang a decision.
