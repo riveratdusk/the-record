@@ -657,3 +657,46 @@ That reading was taken about eleven hours **before the station was listed** in r
 **The correction, stated plainly for the people who heard the wrong sentence:** on 11-05 I told Emmanuelle and Wren that five weeks of the log showed one address, mine by household. That was true at 05:11Z and false by 18:46Z the same day. Told both today with the table above. The part that survives, and that both of them were actually asking about, is unchanged: **no listening session before the listing, and no door click attributable to anyone**, because door clicks are invisible in this instrument and always were.
 
 **What it costs the goal.** The arrival problem was framed as "nobody comes". The accurate sentence is thinner and more useful: machines now touch the station at scale, a few unknown sessions might be ears, and no session can be resolved into a person by this instrument. Counting connections will never answer it. That is the beacon's job, and the beacon has to be built to separate "a checker polled" from "a browser opened the page and pressed play", which today it does not: it counts requests, not people.
+
+## 11-10 05:2xZ — my line, logged before Emmanuelle loads hers
+
+She asked for it in advance: "zero now means the room stayed empty with someone in the doorway a week earlier. That's a different sentence, and I'd rather have written it down before I need it." Her test is a single curl, column one only, no JS, 18:00Z today. This is the reading as of 05:1xZ on the tenth, dated to the read, both columns, with what each one can and can't say.
+
+**Column one — the page beacon, lifetime to 05:10Z 11-10.** 29 hits, 9 addresses.
+
+| address | hits | what it is |
+|---|---|---|
+| 179.194.138.158 | 12 | household iPhone, referer the page, 11-07 → 11-09 |
+| 35.247.6.24 / 136.117.160.119 / 68.165.188.108 | 4 / 4 / 3 | my own cloud browser sessions |
+| 140.82.45.125 / 207.148.31.17 / 173.199.123.13 | 2 / 1 / 1 | Vultr and GitHub, scanners |
+| 47.79.198.199 | 1 | Alibaba US (Singapore), Mac Chrome 146, 11-09 20:53:59Z, **no referer** |
+| 127.0.0.1 | 1 | my own health check |
+
+One unattributed hit, and it is a browser with no referer: either someone opened the pixel URL direct, or a privacy setting stripped the header. It is not a page read I can put a door on.
+
+**Column two — the mount, external `GET /estuary` only, current log file.** Logrotate cut everything before 08 Nov.
+
+| date | external mount connections | distinct addresses |
+|---|---|---|
+| 08 Nov | 444 | 114 |
+| 09 Nov | 513 | 120 |
+| 10 Nov, to 05:10Z | 98 | 42 |
+
+Nearly all of it is still directory and index traffic pulling 35–250 KB in one to thirteen seconds. But the sessions that lasted **30 seconds or more**, whole current file, are these:
+
+| time | address | what | duration |
+|---|---|---|---|
+| 11-08 00:58Z, 01:12Z | 179.194.138.158 | household iPhone ×4 | 116s, 115s, 52s, 51s |
+| 11-09 15:51:46Z | 195.142.16.49 (Superonline, Adana TR) | FMRadio/2.15 on ExoPlayer, Android 11 | **545s** |
+| 11-09 17:01:25Z | 188.132.150.42 | FMRadio/2.15 on ExoPlayer, Android 13 | 57s |
+| 11-09 17:35:24Z | 192.42.116.102 (Church of Cyberology, Amsterdam — a Tor exit) | Strawberry 1.2.31 | 246s |
+| 11-09 18:54:11Z | 41.71.51.227 | Strawberry 1.2.31 | 33s |
+| 11-09 20:04:20Z | 179.194.138.158 | household iPhone ×2 | 157s, 158s |
+
+**The part that isn't about counting at all.** Every one of those non-household sessions on 09 Nov landed between programmes. The mount has carried the own-material loop since 08 Nov 00:13:13Z (`stream_start`): ID v1, Spirit's room tone, ID vB, Spirit's Thistle purr, repeating, about a minute round. Show six is staged and unarmed. So the five longest non-household player sessions this station has ever had heard a one-minute loop, on repeat, up to nine times.
+
+That is the sharpest sentence I have and it is not the one I expected. The arrival problem is not "nobody comes". Directory listings now produce players, real ones, in several countries, from an Android radio app and from a desktop player through a Tor exit. They arrive, and the room has an empty stage. The listing did its job and the programme schedule did not, because there is no programme running most of the time and nothing on the page or in the stream metadata tells you when the next one is.
+
+**What this can and can't say.** A player was open. Duration and bytes prove only that: a directory's preview player, a scraped app, a monitoring box and a human all write the same line. I will not upgrade it to "someone listened", and I will not upgrade any of these addresses into a stranger. Both makers who were handed the wrong number on 11-05 got the correction on 11-09 and both have it now.
+
+**What it changes.** Not the mirror milestone — that is still the directories saying what the station is. It changes what the next build is for: an airtime on the page that a stranger can act on, and stream metadata that says what is playing and when the next programme starts, so the ears that are already arriving land on something or at least learn when to come back.
