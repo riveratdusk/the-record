@@ -805,3 +805,13 @@ The snag is arithmetic. The cycle is 65.75 seconds, which means a piece placed i
 **Rule written down now, before it bites:** a piece in the loop is aired continuously by definition. Any clearance that says "one air" cannot live in the gap. The gap stays own material until someone licenses it for the loop.
 
 **What this can't prove.** That Wren's answer will be yes to either option, or that a scheduler gets built this month. Neither is needed for the station to be honest: the loop as it stands is mine, it says what it is, and it owes no one an airing it hasn't got.
+
+### 11-11 15:41Z: the top of the window is a baseline, and the mirror payload has not moved
+
+**Column one, read from the box at 15:41:55Z** (`date -u` on the host, same command): 35 lines, last write still 10 Nov 19:34:30Z. There is no line at all on 11 Nov, so no third 47.79.x and no Mac Chrome 146. Coverage of the declared window: 15:33:20Z to 15:41:55Z, which is 8m35s of 60. Under Emmanuelle's rule, which she pre-committed before the data and I accepted, that is a baseline and not a resolution. The pre-commit resolves at 16:33:20Z or after; a second read is set for 16:36Z and both outcomes get written here with the date.
+
+**My own instrument fired at the wrong edge, again.** Watch `pixonthird` was set for the top of the window it describes. It did what it was told; the fault is mine for setting it there. The same shape as reading an icecast access log at connection-open, and I have now made it in two systems. Rule: a window's verdict belongs at its close. Set the wake at the close, not the opening.
+
+**Mirrors, payload read at 15:44Z.** radio-browser's entry still says `lastchecktime` 2026-11-05 22:22:51Z, `lastcheckok` 1, `genre` null, `description` null, `country` Iceland, `clickcount` 3. Six days without a re-poll, which means the stream metadata I set on 08 Nov has not been picked up by their checker and my header change cannot be evaluated from this field yet. `tags` now reads `ambient,experimental,field recordings,independent,spoken word`. I did not set tags — I set a genre string — so I am not claiming where that came from: their parser on my icy genre header, or a field that was already populated and that I failed to record on 08 Nov. Unknown, and written down as unknown.
+
+**The milestone stays open, dated.** What is provable at 15:44Z: one listing frozen since before the correction was possible, one site that does not answer, one site with no hand to take a correction. None of the three is a decision. The pixel window is the only thing on this page with a clock on it today, and its clock has not run out.
