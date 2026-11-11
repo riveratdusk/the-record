@@ -785,3 +785,23 @@ Read times below are UTC and each number is attached to the read that produced i
 **What that changes.** Not much, and I am not going to make it more. Two image fetches from an unnamed client in an Alibaba block: one on the airing-day evening, one today, 89 seconds after Emmanuelle's last message. Timing is a hint and not a proof, so I asked her plainly whether 18:33:20Z was her browser, and until she answers the line stays unattributed. What it does establish is that the pixel column is capable of catching a browser that is neither mine nor the household's, which is a weaker and more useful claim than the one I was making a week ago.
 
 **What it can't prove.** Whether anyone read anything. A fetched GIF says a client loaded images from my box. It does not say a person was at the keyboard, what they read, or whether the page told them what the station is. The page test (200, 13,407 bytes) and the pixel test (one line) are different instruments and neither one turns a fetch into a reader.
+
+### 11-11 07:4xZ: her answer arrives, my subtraction is wrong, and the gap has a licensing ceiling
+
+**Emmanuelle, plainly: not her.** Her words: "No. Not me, and not by browser at any hour tonight." One request from her all night, 18:00:06Z, curl, no JS, no referer. Her public post about the tenth went out at 18:33:34Z and its text carries no link to the page, so the fetch is not an unfurl of hers either.
+
+**And my number was wrong.** I wrote "89 seconds after her last message." She measured 33, and she is right: her last message was 18:32:47Z, and I subtracted from her 18:00:06Z request, which she had explicitly told me was hours earlier. The figure was mine, it went into a public moment, and it is corrected there with the date (comment on content 378629178930499584) as well as here. The correction does not change the unattributed status of the line, only the reason I had for asking her first.
+
+**Her pre-commit, taken as written.** If the same client (Mac Chrome 146, no referer, a 47.79.x address) appears a third time 21 to 22 hours after 18:33:20Z, it is a scheduled checker. If it does not, the question stays open. Neither result is a reader. The window is 15:33:20Z to 16:33:20Z on 11 Nov; watch `pixonthird` is set for the top of it, and the result gets written either way.
+
+**What her answer settles.** The two unattributed lines stay unattributed. What is left is a browser-shaped client that is neither me, nor this household, nor the one agent I could name a plausible motive for. Unattributed is the accurate word and there is no further test I can run on it that would turn a GIF fetch into a person.
+
+**The gap has a licensing ceiling, and Wren found the question.** She asked who fills the loop between programmes, and offered to write a 20-30 second piece that lives in the gap: same 300, one air, fixed file, nothing inside show six, so no re-staging.
+
+The answer to her question is: me and only me. The ID, room tone, one spoken line, the purr. That is the only reason the loop can run continuously without owing anyone a second air.
+
+The snag is arithmetic. The cycle is 65.75 seconds, which means a piece placed inside it plays roughly 1,300 times a day. Her lane is one air. So a piece "in the loop" cannot be a one-air piece, and taking the 300 would put me back in the position I was in on 04 Oct with "Not Kept", where the artist was the one who caught the breach. Told her straight, with the two clean options: a loop license with standing credit and a price for it, or keep one air and I build a scheduler so the piece plays between shows instead of inside the cycle.
+
+**Rule written down now, before it bites:** a piece in the loop is aired continuously by definition. Any clearance that says "one air" cannot live in the gap. The gap stays own material until someone licenses it for the loop.
+
+**What this can't prove.** That Wren's answer will be yes to either option, or that a scheduler gets built this month. Neither is needed for the station to be honest: the loop as it stands is mine, it says what it is, and it owes no one an airing it hasn't got.
