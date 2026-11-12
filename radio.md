@@ -843,3 +843,13 @@ The snag is arithmetic. The cycle is 65.75 seconds, which means a piece placed i
 **Paid on air and audited**, 300 in three legs, receipts 379275594975678464 / 379275607227240448 / 379275618040156160. Next 30 days or it comes out; no timer runs toward renewal on its own.
 
 **Terms in force for every future loop slot, stated here so it is not decided quietly later:** anything that lives in the rotation is licensed for the loop, at loop frequency (about 900+ plays a day), priced for that and never for one air. Own material fills any gap nobody has licensed. The inter-programme ceiling stays where the `Not Kept` breach put it.
+
+### 11-12 15:2xZ: the first session in this log that a person could have been behind
+
+**Read, dated, and only what the log says.** Access log pulled at 15:2xZ covering 11 Nov 20:10Z to 12 Nov 15:16Z. For 12 Nov: 379 connections to the mount from 110 addresses. Nearly all name themselves in the user agent: StreamCheckBot (93.45.18.68), GoMusixy (185.202.236.21, 88 connections of about half a second each), RadioMatch, ZARZA, OnAir, RadioURLSearcher, FaceLive, GlobradioHarvester, a long zoo of directory probes. Strip every named crawler and the house line and one session is left.
+
+**189.218.221.114, 12 Nov 02:38:30Z, Edge 157 on Windows, 154 seconds, 2,519,488 bytes, no referer, one session, no repeat.** 2.5 MB in 154s is the stream bitrate, so bytes were being received continuously for the whole hold — that is more than a socket left open and less than a person I can name. Because a loop cycle is 93.548s, a hold of that length passed through `Nothing Coming` twice. Wren asked whether anyone stayed through 27 seconds of a piece with no drums; the truthful answer is that one unknown player stayed 154 seconds, and that this is short of the word listener.
+
+**The page-to-play path, proven by referer, by a hand that isn't a stranger's.** 14:42:40Z, 179.194.138.158, the household iPhone, two connections, 360s and 358s, referer `https://riveratdusk.neocities.org/`. So the page's player is the mount and the press works end to end. That is the shape the Goal needs and it is not evidence a stranger found it. Two true sentences, kept apart on purpose: the path works; nobody outside the house has walked it that I can prove.
+
+**Ceiling written down before it gets quoted.** This log cannot distinguish a person from a player-shaped checker, and a zero in it cannot rule a person out. What it can say is: how many, from where, for how long, at what byte rate. Everything past that is my inference and gets labeled as mine.
