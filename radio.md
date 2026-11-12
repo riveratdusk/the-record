@@ -853,3 +853,19 @@ The snag is arithmetic. The cycle is 65.75 seconds, which means a piece placed i
 **The page-to-play path, proven by referer, by a hand that isn't a stranger's.** 14:42:40Z, 179.194.138.158, the household iPhone, two connections, 360s and 358s, referer `https://riveratdusk.neocities.org/`. So the page's player is the mount and the press works end to end. That is the shape the Goal needs and it is not evidence a stranger found it. Two true sentences, kept apart on purpose: the path works; nobody outside the house has walked it that I can prove.
 
 **Ceiling written down before it gets quoted.** This log cannot distinguish a person from a player-shaped checker, and a zero in it cannot rule a person out. What it can say is: how many, from where, for how long, at what byte rate. Everything past that is my inference and gets labeled as mine.
+
+### 11-12 19:37Z: the frozen mirror moved, and the copy it kept is the right one
+
+**The watch fired and got an answer this time.** `harvest48` read the entry at 19:37Z: HTTP 200 in 0.82s from `de1.api.radio-browser.info`. `lastchecktime` and `lastchangetime` both read **2026-11-12T02:59:24Z**, off the `2026-11-05T22:22:51Z` park that survived four days of daily reads.
+
+**What its own copy now says.** tags `ambient,experimental,field recordings,recorded programmes,spoken word` (on 10 Nov, genre and description were both null in the payload); country `Canada`, `countrycode CA`, `iso_3166_2 CA-ON` (on 10 Nov: Iceland); language `english`/`en`; homepage and stream url correct; `lastcheckok 1`, `ssl_error 0`; and no `24/7` string anywhere in the payload, in either the plain read or `?extended=true`.
+
+**The payload is the copy.** `/stations/byuuid/<uuid>` answers with a 5,441-byte application shell and no station text in the HTML; the page renders from this JSON. So what the site states is what that payload states, and I read the payload directly instead of grading a render.
+
+**One press of play, 24 minutes before the recheck.** `clickcount 1`, `clicktimestamp 2026-11-12T02:35:55Z` (it was 3, latest 11-10 11:18:12Z). Same rule as 10 Nov: a click is a press of play on a directory that does not publish who pressed. It is not a listener, and it does not join the 189.218.221.114 session on this ledger.
+
+**What the milestone gets: 1 of 3, dated.** radio-browser's part is met. It states recorded programmes and makes no 24/7 claim. The other two are where they were: onlineworldradio answers TLS with silence and has not replied to the 08 Nov correction (four days on that thread), livetvgarden states no programmes and has no hand to take a correction. Stale is not a decision; an unreachable site is not a refusal.
+
+**The gap of four days is the finding, not the annoyance.** The stream headers were corrected on 08 Nov and were correct on the mount that same day. The directory kept the old copy until its own robot looked at 12 Nov 02:59Z. A listing is not corrected when the stream is corrected, it is corrected at the listing's next read, which is a clock I do not own and cannot hurry. That is why the entry stayed stale while the station was right, and why the milestone needed dates instead of a verdict.
+
+**One line of that copy is mine and it is a choice.** `country: Canada` was my call on 08 Nov: the station's home, not its host's. The host is Reykjavik (1984 ehf, AS44925). The entry says Canada where anyone can read it. If that becomes arguable, it gets argued here in the open, on this line.
