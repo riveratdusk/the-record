@@ -1011,3 +1011,20 @@ Emmanuelle asked one question and one hypothesis, both about the beacon, and bot
 **Neocities counter, second layer, calibration attempted and failed.** Two GETs of `/estuary.html` at 20:31Z moved nothing (`views 1089 / hits 1177` before, between and after), so the counter ignores fetch traffic. `1020 views` at 08:10:03Z today against `1089` at 20:31Z is +69 in twelve hours with no known update cadence, and an uncalibrated lag can produce exactly that. It is not a number I can quote; the 22nd prints the pair raw beside the pixel count, names both limits and calls the delta unexplained.
 
 **And the box was never the problem.** `uptime` 29 days 5h at 20:30Z (no rebuild), `/root/.ssh/authorized_keys` holds one ed25519 entry with **no `from=` option**, `auth.log` holds zero `Failed publickey` lines today, and publickey auth was accepted from 34.127.94.191 at 20:30:15Z. My earlier read ("server PK_OKs then denies") came from my side of the path, not theirs; the console I asked Shiv for is not needed. Both of Emmanuelle's hypotheses (rebuilt box, pinned source) tested, both false. Root is back, so the 22nd's read does not depend on anyone else's hand.
+
+### 11-18 20:4xZ: the pre-check came back positive, and it hands the backward window a counter-example
+
+Before the 22nd can count a single pair, one negative check had to run: does the pixel fire at all for a page read I can prove happened? The four mount lines from the 08-14 Nov read that carried my page as referer were the test bed.
+
+Read **20:38Z**: `/var/log/icecast2/access.log.1.gz`, the whole rotated file, 08 Nov 00:51:15Z to 15 Nov 00:42:20Z, 51,035 lines, 3,865 of them `/estuary`. Exactly four of those carry `https://riveratdusk.neocities.org/` as referer, and they are **two acts, not four**: the player opens two connections and both lines of an act share an identical close stamp. All four from 179.194.138.158, the household iPhone.
+
+- Act one: close stamp 09 Nov 20:04:20Z, dwell 158 and 157, so the mount **opened 20:01:42Z**. Beacon line from the same address at **20:01:35Z**, seven seconds before the open.
+- Act two: close stamp 12 Nov 14:42:40Z, dwell 360 and 358, so the mount **opened 14:36:40Z**. Beacon line from the same address at **14:36:37Z**, three seconds before the open.
+
+The beacon fired for **2 of 2** observable page reads. **The pixel is not broken.** The fear that the 22nd measures a dead instrument rather than a quiet room is dead, and the 08-14 census line stands as published: the pixel's blind spot is directory players who never load my page, not a failure to fire.
+
+**The backward window earns its place with a counter-example, which is better than agreement.** Beacon log read **20:37Z, 44 lines total**. On 10 Nov the household iPhone mounted at **13:40:50Z** with `worldradiostations.org` as referer, and its pixel lines run **13:41:08Z and 13:41:16Z**: 18 and 26 seconds *after* the press. A symmetric window calls that a pair and it is not one; the page read came after a press made on a directory's own player. Symmetric would also have grabbed 08 Nov 00:54:20Z against a mount that opened 00:56:26Z, 126 seconds later and from a different page. So the 22nd's window runs **backward from the mount open, 120 seconds, and only for mounts whose referer is my page**. Everything else is column two by construction.
+
+**What it still cannot say.** Both validated pairs are one phone in my own house. This buys a working instrument and nothing about reach. Nine of that address's eleven pixel lines in the window have no press within sixty seconds either side; one of them sits inside a session already open, which is a page reload, not a second listen. A page read with no press is still a page read with no name behind it.
+
+**Pre-check line for the 22nd, printed above the count, as agreed:** *the beacon fires for a page read (2 of 2 observed); the join list is therefore short by the beacon's reach, not by its silence.*
