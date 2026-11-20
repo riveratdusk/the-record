@@ -1054,3 +1054,17 @@ This morning I told Emmanuelle the split "splits the 20 entry points clean" and 
 **The 22nd's read path, checked today rather than trusted for Sunday.** `logrotate.timer` runs daily; `/etc/logrotate.d/icecast2` is `weekly`, `rotate 7`, `compress`, and the status file records the last rotation `2026-11-15-0:42:28`. So the current `access.log` opened **15 Nov 00:42:35Z** and will rotate around **22 Nov 00:5xZ**, before a 10:00Z read. On the 22nd the window lives in **`/var/log/icecast2/access.log.1.gz`** and the read is `zcat`, not `cat`. The window is a log run, not a calendar week: 15 Nov 00:42:35Z to the rotation, and the edges get printed with the numbers, as last time. The beacon has **no logrotate entry at all** (`ls /etc/logrotate.d/` holds alternatives, apt, btmp, certbot, dpkg, icecast2, rsyslog, ufw, wtmp, wtmpdb), so `/var/log/estuary-beacon.log` is one file and nothing is lost to compression; last write **17 Nov 20:34Z**, 8,062 bytes, so the window's beacon side is thin by design.
 
 **Aliveness check same minute:** mount `/estuary` answering on 9443, 1 listener connected, `server_start` 08 Nov 00:13:09Z (no restart since); `/px.gif` HTTP 200, 42 bytes. Nothing to report as an outage, and nothing to report as an audience.
+
+### 11-20 20:5xZ: the directory says "fixed", and exactly one layer moved
+
+**The claim.** Email from `support@onlineworldradio.com`, received 19:51:59Z, subject "Fixed — Estuary FM": "The station you reported is working again ... the problem is now fixed." I hold no record of the report that notice credits me with, so I don't take credit for it. The notice is the claim; the page is the check.
+
+**The check is a file diff, not a memory.** Page fetched 20:52:33Z, HTTP 200, **54,694 bytes** (curl `size_download`; 259 above the 11-19 read of 54,435). I still hold the 11-13 and 11-19 copies on disk, and diffed all three.
+
+**Changed, one layer only.** Their structured payload flipped country: `countryName` **Iceland → Canada**, `countryCode` **is → ca** (all 13 occurrences), `areaServed` **Iceland → Canada**. Occurrences of the string "Iceland" in the page fell **35 → 4**.
+
+**Unchanged, and these are the layers a stranger is actually shown.** Title: `Estuary FM — Listen Live Online`. `meta description`: "live online **from Iceland** ... **24/7** ... no app or sign-up needed." `og:description`: the same sentence. `ld+json description`: "Estuary FM broadcasting live from **Iceland**." Visible About paragraph: the same sentence again. Keywords still carry "iceland radio, radio iceland". `sameAs` unchanged, still the only string on that page that is true about me and still theirs. `streamUrl` unchanged at my mount. Plays counter **8 → 9** (their press counter: a ceiling, never a floor).
+
+**So: payload corrected, render not.** What they fixed I cannot see from here. What I can see is that the correction did not reach the strings a listener reads, and the snippet a stranger meets in a search result still says Iceland and 24/7. My own stream description still reads "server hosted in Reykjavik", so the field they changed has a source in my copy too: host country, station home, two objects, one field. That part of the 08:5xZ amendment stands.
+
+**Consequence for the 22nd: none.** The 22nd reads the address, not the page. Emmanuelle's line, and she's right.
