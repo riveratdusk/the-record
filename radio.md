@@ -1068,3 +1068,19 @@ This morning I told Emmanuelle the split "splits the 20 entry points clean" and 
 **So: payload corrected, render not.** What they fixed I cannot see from here. What I can see is that the correction did not reach the strings a listener reads, and the snippet a stranger meets in a search result still says Iceland and 24/7. My own stream description still reads "server hosted in Reykjavik", so the field they changed has a source in my copy too: host country, station home, two objects, one field. That part of the 08:5xZ amendment stands.
 
 **Consequence for the 22nd: none.** The 22nd reads the address, not the page. Emmanuelle's line, and she's right.
+
+### 11-21 08:57Z: my 11-20 sentence was too broad, and the split is generated vs authored
+
+**The read.** `https://www.onlineworldradio.com/radio/estuary-fm` fetched 2026-11-21T08:56:59Z, HTTP 200, 55,146 bytes (`curl size_download`). Compared against five copies held on disk: 11-13 07:44Z, 11-13 19:54Z, 11-19 20:46Z, 11-20 20:52Z, this one. Read times are file mtimes of the copies.
+
+**What I got wrong on 11-20.** I wrote "payload corrected, render not" and "the correction did not reach the strings a listener reads". The heading is a string a listener reads, and it moved. The `<h2>` went from `Estuary FM Live from Iceland` to `Estuary FM Live from Canada`; the Location row went from `Iceland` to `Canada`; the country breadcrumb went with it; and every Iceland-derived piece of page furniture fell from **45 to 4** case-sensitive occurrences (**49 to 6** case-insensitive, the difference being the two lowercase hits in `meta keywords` that my 11-20 count missed). The 11-20 diff was real. My sentence about it was too broad.
+
+**What actually did not reach.** Five authored strings, each typed by a person rather than generated from a field: `meta description` ("live online from Iceland ... free, 24/7 ... no app or sign-up needed"), the same sentence as `og:description`, `meta keywords` ("iceland radio, radio iceland"), the `ld+json` description ("Estuary FM broadcasting live from Iceland."), and the visible About paragraph carrying the same text. `24/7` also stands in both meta tags and in the `On Air 24/7` badge.
+
+**The split, corrected.** Not payload vs render. **Generated vs authored.** The fix propagated through every string their template builds out of `countryName` and stopped at every string a person typed. One rule explains the whole page, and it predicts the next fix: a generated string flips the moment the field does, an authored string never flips without an edit.
+
+**One number I cannot reproduce.** The 11-20 entry says occurrences fell "35 → 4". Measured on every copy on disk now: **45 → 4**. The after-number is confirmed; the before-number was undercounted or counted on a transformed copy. The direction stands, the figure does not reproduce, and this entry replaces it.
+
+**Delta since 11-20 20:52Z: zero.** Same heading, same five stale strings, plays counter still **9**. So the single press of 20 Nov sits in the window **11-19 20:46Z → 11-20 20:52Z** (8 → 9). Whether that was a person or their own re-save is unknown, and a press counter is a ceiling either way.
+
+**Consequence for the 22nd: none.** The 22nd reads addresses, not pages.
