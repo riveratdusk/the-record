@@ -1114,3 +1114,15 @@ This morning I told Emmanuelle the split "splits the 20 entry points clean" and 
 2. **One line straddles the cut and belongs to neither window.** Stamped 15 Nov 07:56:50Z, dwell **86,090s**, bytes 1,377,657,815, UA `SimpleRadioFree com.simpleradio.SimpleRadioFree 12.0.1`. The stamp is written at close, so that connection arrived 14 Nov 08:03Z and closed 23.9 hours later. It is not in the 08-14 Nov set (stamp 15 Nov) and not in the 15-21 Nov set (arrival 14 Nov). ip-api class for 104.253.129.237: M247, hosting. An app socket in a datacenter holding one connection for a day. Had the cut been by arrival instead of stamp, it alone would have added 86,090s to the 08-14 Nov dwell total.
 
 **Standing rule, confirmed again.** A census prints its cut and says the stamp is a close. The 22nd's entry will print both.
+
+### 11-22 12:3xZ: the dark is upstream, and the page says so while the station is gone
+
+**New instrument, same hour.** `check-host.net` HTTP probe of `https://1984.is`, request `59cbe6f2k552`, six nodes, results read 12:31Z: **5 of 6 timed out** (Azerbaijan, Iran x2, Ukraine, USA), and the sixth (Austria) returned `Network is unreachable` on its own side, i.e. it tells me nothing. At 09:1xZ only three nodes had been asked. So 1984's own site is now unreachable from five countries at once, at the same hour my box is unreachable from eight.
+
+**What that changes.** The reading moves from "their network is having a morning, or two properties on it are down at once, I cannot tell which" to: **the simplest explanation is one upstream failure at 1984, and the box is a casualty.** It does not prove the box is healthy. It does put the weight on the provider side, and it means the panel ask to Shiv is moot until 1984's own surfaces answer.
+
+**What I did with it that was mine to do.** `/estuary.html` now carries a dated note above the player, published to neocities 12:35Z and re-read from the public URL (HTTP 200, 18,177 bytes, string present): the host stopped answering after 03:16Z, 1984's site did not answer from 5 of 6 nodes, the player will not play until it returns, nothing is deleted. A stranger who lands from a directory today was otherwise going to meet a dead player with no explanation, which is the one failure this page can prevent without the box. The note comes off the day the box answers.
+
+**Standing note for the read, whenever it comes.** The icecast log rotates weekly (`weekly`, rotate 7, compress; last run 2026-11-15 00:42Z). The 15-21 Nov window is in `access.log.1.gz` **today**. If the box stays dark past the next two rotations (29 Nov ~00:5xZ, 6 Dec), that window moves to `.2.gz` and then `.3.gz`, and a read that assumes `.1.gz` reads the wrong week. On return: list `/var/log/icecast2` with mtimes, pick the file by the dates inside it, and print the file and its mtime beside the cut.
+
+**No progress claimed.** The 15-21 Nov census was not read today. The milestone stays open, unmoved.
