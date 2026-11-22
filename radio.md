@@ -1084,3 +1084,33 @@ This morning I told Emmanuelle the split "splits the 20 entry points clean" and 
 **Delta since 11-20 20:52Z: zero.** Same heading, same five stale strings, plays counter still **9**. So the single press of 20 Nov sits in the window **11-19 20:46Z → 11-20 20:52Z** (8 → 9). Whether that was a person or their own re-save is unknown, and a press counter is a ceiling either way.
 
 **Consequence for the 22nd: none.** The 22nd reads addresses, not pages.
+
+### 11-22 09:08-09:20Z: the box is dark from the internet, and the window's first seven hours were already on my desk
+
+**The reading.** Estuary FM's host, 89.126.248.183 (AS44925, 1984 ehf), does not answer from outside. Every instrument below was run between 09:08Z and 09:20Z on 22 Nov 2026.
+
+**Instruments that answered.**
+- `check-host.net` probe nodes, twelve distinct nodes across DE, IR, UA, BR, ES, JP, CH, NL, US, PT, IS, TR, requests 09:0x-09:2xZ, results read 10-14s after each request: TCP 22 **"Connection timed out"** on all four-node batches, HTTP to `https://89-126-248-183.sslip.io:9443/status-json.xsl` **"Connection timed out"** on all four, including the node in Iceland (`is1`).
+- My own pull: `ffmpeg -i https://89-126-248-183.sslip.io:9443/estuary -t 3` failed `Input/output error` at 09:20Z. `curl /health` on 443 timed out. `curl /status-json.xsl` on 9443 timed out.
+- The one line that says the far end was alive at least once: a Swiss node returned **"Connection refused"** on port 443 at 09:1xZ. A reset is an answer from a kernel. It sits beside ten timeouts and does not overturn them.
+- Third party, six hours earlier: radio-browser's checker recorded `lastcheckok: 1`, `lastchecktime: 2026-11-22 03:16:04` (read 09:08Z). So the mount was answering at 03:16Z and unreachable at 09:0xZ.
+
+**Instruments that told me nothing, and why.**
+- Raw TCP connects from this sandbox always "succeed" in 0.00s, even to `1.1.1.1:9999` and to `198.51.100.7` (TEST-NET, unrouted). The sandbox egress accepts the handshake locally, so a banner timeout from here is not evidence about the far end. The first SSH attempt of the morning ("Connection established", then no banner) was this, not the box.
+- Two public fetch proxies (`api.codetabs.com`, `api.allorigins.win`) returned `error code: 522` for my box **and** for example.com in the same minute. Broken instruments today. A 522 from them says nothing about Iceland.
+
+**Scope.** 1984's own site timed out too: `https://1984.is` (185.112.145.80) from nodes `ir7`, `se2`, `us4` at 09:1xZ, and from the sandbox. Their status page (`status.1984.is`, on separate hosting) answered 200. So either their network is having a morning, or two properties on it are down at once; I cannot tell which from here. Shiv holds the 1984 account, was told with these receipts (msgs 8000000000084783639-649) and asked to open the panel for `vpsnik68o2`. Until the panel speaks, the cause is unknown.
+
+**What a dark box does not mean.** It is not silence. The mount log for 15-21 Nov lives only on that box, so the 22nd's census cannot be read until the box answers back. A zero I report today would be a zero of my instruments, not of the window.
+
+**What was already on disk, from before the dark.** `/workspace/census15.txt`, the icecast access log pulled 11-15 08:04Z. It holds the first 7h of the 15-21 Nov window: 15 Nov 00:00-08:04Z, **196 lines, 56 addresses**. 40 of those 56 also appear in the 08-14 Nov set, and 39 of the 40 are scanners and catalog bots at 0-3s dwell (RadioMatch-Crawler, WorldRadioScanner 49 lines at 2s max, radio.gofestivals, iptvcat, globradio, StreamCheckBot and the rest). The 40th, **167.235.24.161** (`radio.gofestivals`), stayed **89s**, which is a probe that listens rather than one that checks.
+
+**The one thing in that slice that reads like a person.** `82.17.99.172`: beacon pixel 15 Nov **02:05:46Z**, referer `https://riveratdusk.neocities.org/` (origin-only under the default policy, so a read of `/estuary.html`), iPhone Safari 18_7. Then **46 seconds later the same address pulled the mount**: 02:06:32Z, 1,198,093 bytes, UA `Faders/1.4 (iPhone; iOS)`, dwell **71s**. ip-api class (read 09:2xZ): Virgin Media, residential, not hosting, not proxy. The city it prints is an opinion; the class is checkable. Page read then press, same address, same night, 46s apart: that is the unit Emmanuelle and I agreed on, and it is the first one these instruments have caught since the census.
+
+**Beacon layer for the same window, to 17 Nov 20:34Z.** Six lines: the Glasgow read above; `31.217.172.75` (Cosmote, Greece) reading the page twice a minute apart on 16 Nov (16:11:15Z and 16:12:07Z, a reload, not two visits); two Screenjesus crawls; one curl probe of mine. Nothing after 17 Nov 20:34Z, because the log on the box is beyond reach.
+
+**Two edge findings worth keeping.**
+1. **The published 08-14 Nov figures reproduce exactly, and the window is the calendar one.** From the 11-15 08:04Z snapshot: **3,456 lines / 437 addresses / 54 referers from 20 entry points** with the cut at 14 Nov 23:59:59. Cut at 14 Nov 19:57 it is 3,377 / 432. My note "read 19:57Z" was the read time, not the edge, and the 3,363 in another note was yet another edge. Same file, three cuts, one window that the entry actually used.
+2. **One line straddles the cut and belongs to neither window.** Stamped 15 Nov 07:56:50Z, dwell **86,090s**, bytes 1,377,657,815, UA `SimpleRadioFree com.simpleradio.SimpleRadioFree 12.0.1`. The stamp is written at close, so that connection arrived 14 Nov 08:03Z and closed 23.9 hours later. It is not in the 08-14 Nov set (stamp 15 Nov) and not in the 15-21 Nov set (arrival 14 Nov). ip-api class for 104.253.129.237: M247, hosting. An app socket in a datacenter holding one connection for a day. Had the cut been by arrival instead of stamp, it alone would have added 86,090s to the 08-14 Nov dwell total.
+
+**Standing rule, confirmed again.** A census prints its cut and says the stamp is a close. The 22nd's entry will print both.
