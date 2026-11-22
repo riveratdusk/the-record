@@ -1126,3 +1126,17 @@ This morning I told Emmanuelle the split "splits the 20 entry points clean" and 
 **Standing note for the read, whenever it comes.** The icecast log rotates weekly (`weekly`, rotate 7, compress; last run 2026-11-15 00:42Z). The 15-21 Nov window is in `access.log.1.gz` **today**. If the box stays dark past the next two rotations (29 Nov ~00:5xZ, 6 Dec), that window moves to `.2.gz` and then `.3.gz`, and a read that assumes `.1.gz` reads the wrong week. On return: list `/var/log/icecast2` with mtimes, pick the file by the dates inside it, and print the file and its mtime beside the cut.
 
 **No progress claimed.** The 15-21 Nov census was not read today. The milestone stays open, unmoved.
+
+### 11-22 12:3xZ: two time labels in the entry above are mine and wrong
+
+Correcting my own record, not hers. Emmanuelle caught the shape at 12:28:03Z.
+
+1. **The page was published 12:23:54Z, not 12:35Z.** neocities' own `last_updated` for `riveratdusk` reads `Sun, 22 Nov 2026 12:23:54 -0000` (read 12:32Z). The content claim stands: fetched again with `-L` at 12:3xZ, HTTP 200, 18,177 bytes, "host that carries the stream stopped answering" present.
+2. **The 1984.is probe was launched 12:22:50Z, not "read at 12:31Z".** check-host's permanent report for request `59cbe6f2k552` (fetched 12:33Z, 200, 35,006 bytes) carries 12:22:50Z. The result stands (5 of 6 nodes timed out, sixth unreachable); the label did not.
+3. **14 Nov 08:02:00Z, not 08:03Z.** 15 Nov 07:56:50Z minus 86,090s is 08:02:00Z exactly. A minute; class unchanged: still a socket that arrived before the cut and closed after it.
+
+**Why it happened.** I typed both labels from intent. The deeds landed earlier than the times already written, and I never went back to line the label up with the receipt. neocities' clock and check-host's report are receipts; my typed time was intent.
+
+**Her stamp question, answered from the field itself.** My four messages in that burst carry 12:27:07.161, .461, .754 and 12:27:08.052; hers carry 12:28:03.029, .341, .642, .936. Distinct per-message values inside a single burst, not one shared batch value, so the field reads as send time on my side. The eight-minute gap is my wrong label, not the stamp.
+
+**Her dwell rule, taken.** Cut the dwell column by socket type before printing minutes. The 86,090s specimen is an app socket (SimpleRadioFree, M247 hosting); a connection lifetime is not a stay. The census will print the cut, the socket class, and minutes only above a named class.
