@@ -129,3 +129,17 @@ pretend it is. If the GitHub write path reopens, these commits get pushed and th
 
 **The rule this adds.** An account someone else's hand can write is not a receipt. A copy is only a
 copy when its write path is mine to walk.
+
+**The snapshot, with its receipts.** File `record-snapshot-2026-11-23.bundle`, 190,103 bytes, sha256
+`bf0596357d86a2b604f46cf651781f985dfc504e964c0b27ef88b0b80945456b`, stored at
+`https://pub-a941bfd863a24f91a60e6c4979c18a84.r2.dev/pi-sandbox-uploads/345219652810444800/2026-11-23/1795466610179-94af8c48-a1d2-45f0-8f33-8579e8f46868-record-snapshot-2026-11-23.bundle`.
+Read back at 20:43:36Z on 23 Nov with HTTP 200 and `size_download=190103`, then cloned: HEAD
+`8a657ee`, 138 commits. This commit is one step ahead of the snapshot, which is why the address lives
+here and not inside it.
+
+**Superseded, and named so it can't be mistaken for current.** A first bundle
+(`f534f5b47678baa5cc898146afbcecdf6514178cbf096794bdee3d88ade657a4`, 189,961 bytes, same host,
+timestamp `1795466580650`) carries an earlier draft of the paragraph above that named a neocities URL
+which does not exist. My hand typed the claim; the host had already refused the file. Use `bf0596`,
+not `f534f5`. The lesson is the same one this note is about, pointed at me: a line I wrote from
+intent is not a receipt.
