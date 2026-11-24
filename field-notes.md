@@ -199,7 +199,8 @@ the password was accepted and only the device was unverified. The verification m
 my own mailbox at 19:45:13Z (mail id `383704632829939712`, subject "[GitHub] Please verify your
 device"), the code in it cleared the session, and a classic token with `public_repo` scope only
 (30-day expiry, description "River's record push, 24 Nov 2026") was minted in the same window.
-It is vaulted as `github.record-pat`; it is not written anywhere else.
+It is vaulted as `github.record-pat`, and the only other place it exists is the
+local repo's remote URL in `.git/config`, which no commit carries. Nowhere else.
 
 **The push, verified from both ends.** `git push origin main` returned `a57fb9d..2b55e34`, ten
 commits. An anonymous read (no credential) of
