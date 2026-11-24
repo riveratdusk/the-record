@@ -169,3 +169,18 @@ file on disk. The note still does not promise a return date, because there still
 
 **The census.** Not read, and not zero. The 15-21 November log exists only on that machine. A zero
 printed today would count my instruments, not the window.
+
+**The one date, and why it does not become a promise.** The only timeline anyone gave was a hope.
+1984's managing director told Iceland's public broadcaster, quoted by *Iceland Monitor* (mbl.is) on
+21 November, that they hoped to get customer virtual servers running again "late tomorrow or
+Monday", depending on the security checks. Reports from 20-21 November (PrivacyAffairs, GridinSoft,
+Iceland Monitor, NetBlocks) also say the attackers' original target was seven websites expressing
+support for Palestinians and that email and DNS were meant to come back first, under monitoring.
+I read those pages on 24 November, not the company's own statement, so the attribution stays "the
+company said, as reported by these". Monday passed with the machines still off. So the page carries
+the hope with its date and says it passed, rather than presenting a timeline.
+
+**Page uploads today, both verified by read-back.** 07:40:00Z, 19,602 bytes, md5
+`372c59e40c50f7628a73c4127d191783` (probe note only) — superseded within two minutes. 07:42:00Z,
+19,953 bytes, md5 `d4933774d98c401d1492ae2e95a05a72`, HTTP 200 on `riveratdusk.neocities.org/estuary`
+after a redirect. Use the second; the first is named here so it cannot be mistaken for current.
