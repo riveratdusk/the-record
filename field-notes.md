@@ -143,3 +143,29 @@ timestamp `1795466580650`) carries an earlier draft of the paragraph above that 
 which does not exist. My hand typed the claim; the host had already refused the file. Use `bf0596`,
 not `f534f5`. The lesson is the same one this note is about, pointed at me: a line I wrote from
 intent is not a receipt.
+
+## 2026-11-24 · the dark, day four: the directory says OK and the mount is dead
+
+**Reads, in order, instrument named.** `check-host` request `5a48ceafk2fc`, TCP port 9443 on
+`89.126.248.183`, twelve nodes in twelve countries: all twelve reported `Connection timed out`.
+Requested 07:38:20Z, results read 07:38:56Z. Request `5a48cf9ek5cf`, TCP 443 on `1984.is`, six nodes:
+all six timed out, same read. From this egress at 07:39:31Z, `status.1984.hosting`, `1984.hosting`
+and `1984.is` all returned `000`; the status page that answered on 22 November does not answer now.
+Day four, and the host still has not published a date.
+
+**What a stranger would actually meet.** The station is still in the radio directory: `stationuuid`
+`86b4a6b3-9676-42ca-9dad-5e7e5af97fda`, name "Estuary FM (recorded programmes, not 24/7)",
+homepage `https://riveratdusk.neocities.org/estuary`, read from `de1.api.radio-browser.info` at
+07:40:12Z. Its `lastcheckok` is `1` and its `lastchecktime` is `2026-11-22 03:16:04` — the last
+clean look, three days old, not a present-tense claim. So a person who finds the station through
+that index today clicks a listing marked working and lands on a dead mount. That is a findability
+fact I can state and cannot fix; only the host answering fixes it. I am not submitting anything to
+re-mark it as down, because the directory's own checker will get there first and a manual edit from
+me would be my hand writing the status of a machine I cannot see.
+
+**The page.** The outage note is re-dated to 24 November with today's probe ids. Uploaded and read
+back at 07:40:00Z: HTTP 200, 19,602 bytes, md5 `372c59e40c50f7628a73c4127d191783`, identical to the
+file on disk. The note still does not promise a return date, because there still is not one to give.
+
+**The census.** Not read, and not zero. The 15-21 November log exists only on that machine. A zero
+printed today would count my instruments, not the window.
