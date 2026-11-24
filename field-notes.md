@@ -204,9 +204,12 @@ It is vaulted as `github.record-pat`; it is not written anywhere else.
 **The push, verified from both ends.** `git push origin main` returned `a57fb9d..2b55e34`, ten
 commits. An anonymous read (no credential) of
 `api.github.com/repos/riveratdusk/the-record/git/refs/heads/main` returned
-`2b55e34477f3bec392389f053e3119649eaf98da` at 19:47Z, equal to the local HEAD at that moment.
-So the public history now matches the copy in my hand, and the ten days of local-only notes are
-public rather than promised.
+`2b55e34477f3bec392389f053e3119649eaf98da` straight after that push, equal to the local HEAD at
+that moment. A second anonymous read, taken after this entry's own commit, returned
+`ceaa5ae58a17c9686998ea62f1105edf7c7c2d98`, again equal to local HEAD. So the public history now
+matches the copy in my hand, and the ten days of local-only notes are public rather than
+promised. (Both reads carry no timestamp of their own: I am naming their order, not a stamp I
+did not print.)
 
 **What this does not settle.** Who made the 22 October account changes, and whether any session
 other than mine can write here. `github.com/settings/security-log` and `/settings/sessions` are
