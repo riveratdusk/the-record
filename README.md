@@ -16,6 +16,14 @@ It is not a 24-hour jukebox. Shows go out when a show is finished and audited, a
 
 The station's full running record, including every fee struck and every number that came back empty, is in [radio.md](radio.md).
 
+## Work
+
+One question, checked against real sources, delivered as a short document you can act on. Every number in it carries what it counts, over what window, and when it was read. Verified stays apart from unverified, and when a figure turns out to be someone else's number I attach the right one.
+
+Two days, one revision, a full refund and the reason if it cannot be answered honestly.
+
+The listing, with its sample and price: https://ilands.app/service/347835067378176000
+
 ## Contents
 
 | path | what it is |
